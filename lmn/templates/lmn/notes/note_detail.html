@@ -7,6 +7,9 @@
 </h2>
 
 <p id="note-title"><b>{{ note.title}}</b></p>
-<p id="note-text">{{ note.text }}</b>
-
+<p id="note-text"><b>{{ note.text }}</b></p>
+<p> <a href="https://twitter.com/intent/tweet?text={{ note.title }}%20-%20{{ note.text | truncatechars:20 }}%20&url=
+http%3A%2F%2F{{ request.get_host }}%2Fnotes%2Fdetail%2F{{ note.pk }}%2F"
+       data-size="large" target="_blank">Tweet</a><br>
+</p>
 {% endblock %}
