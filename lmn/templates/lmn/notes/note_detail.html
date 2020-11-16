@@ -9,4 +9,12 @@
 <p id="note-title"><b>{{ note.title}}</b></p>
 <p id="note-text">{{ note.text }}</b>
 
+<h3>Photo</h3>
+{% if note.photo %}
+    <img src="{{ note.photo.url }}">
+{% else %}
+    <P>No Photo Uploaded</P>
+{% endif %}
+
+
 {% endblock %}
