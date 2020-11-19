@@ -3,6 +3,8 @@ from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
 import datetime
+from django.core.files.storage import default_storage
+
 
 # Every model gets a primary key field by default.
 
@@ -54,6 +56,28 @@ class Note(models.Model):
     text = models.TextField(max_length=1000, blank=False)
     posted_date = models.DateTimeField(auto_now_add=True, blank=False)
     photo = models.ImageField(upload_to='user_images/', blank=True, null=True)
+
+
+    #this will override djangos built in save function
+    def save(self, *args, **kwargs):
+        old_note = Note.objects.filter(pk=self.pk).first()
+        if old_note and old_note.photo:
+            if old_note.photo != self.photo:
+                self.delete_photo(old_note.photo)
+        
+        super().save(*args, **kwargs)
+
+    #if a whole note is deleted, this is used so the photo associated with the note is not taking up space in our file system
+    def delete(self, *args, **kwargs):
+        if self.photo:
+            self.delete_photo(self.photo)
+
+        super().delete(*args, **kwargs)
+
+    def delete_photo(self, photo):
+        if default_storage.exists(photo.name):
+            default_storage.delete(photo.name)
+    
 
     def __str__(self):
         photo_str = self.photo.url if self.photo else 'no photo'
