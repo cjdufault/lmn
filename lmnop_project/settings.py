@@ -79,18 +79,22 @@ WSGI_APPLICATION = 'lmnop_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'lmnop_db',
-        'USER': 'application',
-        'PASSWORD': os.environ['POSTGRE_PW'],
-        'HOST': '/cloudsql/lmnop-295416:us-central1:lmnop-5432',
-        'PORT': 5432
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
-        
-if not os.getenv('GAE_INSTANCE'):
-    DATABASES['default']['HOST'] = '127.0.0.1'
 
+if os.getenv('GAE_INSTANCE'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'lmnop_db',
+            'USER': 'application',
+            'PASSWORD': os.environ['POSTGRE_PW'],
+            'HOST': '/cloudsql/lmnop-295416:us-central1:lmnop-5432',
+            'PORT': 5432
+        },
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
