@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
-
+from . import api_views
 from . import views
 from .views import views_main, views_artists, views_venues, views_notes, views_users
 
@@ -35,5 +35,10 @@ urlpatterns = [
     path('accounts/login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('accounts/logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     path('register/', views_users.register, name='register'),
+
+    # Api related
+    path('artist', api_views.get_artist, name='admin_get_artist'),
+    path('venue', api_views.get_venue, name='admin_get_venue'),
+    path('show', api_views.get_show, name='admin_get_show'),
 
 ]
