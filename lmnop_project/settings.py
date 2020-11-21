@@ -81,10 +81,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'lmnop_db',
-        'USER' : 'application',
-        'PASSWORD' : os.environ['POSTGRE_PW'],
-        'HOST' : '/cloudsql/lmnop-295416:us-central1:lmnop-5432',
-        'PORT' : 5432
+        'USER': 'application',
+        'PASSWORD': os.environ['POSTGRE_PW'],
+        'HOST': '/cloudsql/lmnop-295416:us-central1:lmnop-5432',
+        'PORT': 5432
     },
 }
         
@@ -128,11 +128,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'www', 'static')
 
-GS_STATIC_FILE_BUCKET = 'lmnop-295416.appspot.com'
-STATIC_URL = f'https://storage.cloud.google.com/{GS_STATIC_FILE_BUCKET}/static/'
+if os.getenv('GAE_INSTANCE'):
+    GS_STATIC_FILE_BUCKET = 'lmnop-295416.appspot.com'
+    STATIC_URL = f'https://storage.cloud.google.com/{GS_STATIC_FILE_BUCKET}/static/'
+else:
+    STATIC_URL = '/static/'
 
 # Where to send user after successful login, and logout, if no other page is provided.
 LOGIN_REDIRECT_URL = 'my_user_profile'
