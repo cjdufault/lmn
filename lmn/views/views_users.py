@@ -40,3 +40,9 @@ def register(request):
 
     form = UserRegistrationForm()
     return render(request, 'registration/register.html', {'form': form} )
+
+
+def logout_user(request):
+    username = request.user.username
+    logout(request)
+    return render(request, 'registration/logout.html', { 'username': username })
