@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<!-- A user's profile page.
+<!-- A user's public profile page.
 
 Includes list of user's notes with title and preview of text.
 Text truncated to 200 characters. 
@@ -12,8 +12,15 @@ user is a variable provided to the template and is the current logged-in user
 
 -->
 
-<h2 id='username_notes'>{{ user_profile.username }}'s notes</h2>
+<h2 id='username_profile'>{{ user_profile.username }}'s Profile</h2>
 
+{% if user_profile.profile.bio %}
+<div>
+    <p>{{ user_profile.profile.bio }}</p>
+</div>
+{% endif %}
+
+<h2 id='username_notes'>{{ user_profile.username }}'s Notes</h2>
 {% for note in notes %}
 
 <div class='note' id="note_{{ note.pk }}">
