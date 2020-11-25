@@ -508,6 +508,20 @@ class TestMyUserProfile(TestCase):
         self.client.force_login(User.objects.first())
         response = self.client.get(reverse('my_user_profile'))
         self.assertTemplateUsed(response, 'lmn/users/my_user_profile.html')
+        self.assertContains(response, 'This bio should be avilable on the page for user 1')
+        # should have an Add Bio button
+        self.assertContains(response, 'Add Bio')
+
+    def test_user_has_edit_form_with_populated_data(self):
+        self.client.force_login(User.objects.first())
+        response = self.client.get(reverse('my_user_profile'))
+        self.assertContains(response, 'This bio should be avilable on the page for user 1')
+        self.assertContains(response, 'Add Bio')
+    
+    def test_user_form_containts_correct_action_url(self):
+        self.client.force_login(User.objects.get(pk=2))
+        response = self.client.get(reverse('my_user_profile'))
+        self.assertContains(response, 'action="/user/profile/')
 
     def test_user_bio_is_displayed_on_public_profile_page(self):
         response = self.client.get(reverse('user_profile', kwargs={'user_pk':1}))
