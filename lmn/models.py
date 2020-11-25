@@ -56,4 +56,3 @@ class Note(models.Model):
 
     def __str__(self):
         return f'Note for user {self.user} for show ID {self.show} with title {self.title} text {self.text} posted on {self.posted_date}'
-

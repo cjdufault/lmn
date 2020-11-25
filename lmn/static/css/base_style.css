@@ -1,3 +1,9 @@
+#site-header {
+  background: url('../img/must.jpg') 0 0 repeat-x;
+  color: rgb(189, 155, 155);
+  padding: 40px 0 40px 0px;
+  text-align: center;
+}
 body {
   font-family: monospace;
   background: #444d4d;
@@ -17,4 +23,8 @@ a {
 .error {
   color: #e60c42;
   font-weight: bold;
+}
+.delete {
+  background-color: rgb(220, 20, 120);
+  border-color: rgb(139, 0, 42);
 }
