@@ -428,6 +428,18 @@ class TestUserProfile(TestCase):
         response = self.client.get(reverse('user_profile', kwargs={'user_pk':3}))
         self.assertContains(response, 'You are logged in, <a href="/user/profile/2/">bob</a>.')
         
+    def test_logout(self):
+        user = User.objects.get(pk=1)
+        self.client.force_login(user)
+        response = self.client.get(reverse('logout'))
+
+        # message confirming logout
+        self.assertContains(response, 'You have been successfully logged out.')
+        
+        # link to log in displayed
+        self.assertContains(response, 'Login or sign up')
+        
+        
 
 class TestNotes(TestCase):
     fixtures = [ 'testing_users', 'testing_artists', 'testing_venues', 'testing_shows', 'testing_notes' ]  # Have to add artists and venues because of foreign key constrains in show
