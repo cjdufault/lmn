@@ -61,7 +61,7 @@ class Note(models.Model):
     user = models.ForeignKey('auth.User', blank=False, on_delete=models.CASCADE)
     title = models.CharField(max_length=200, blank=False)
     text = models.TextField(max_length=1000, blank=False)
-    rating = models.IntegerField(choices=STAR_RATING, blank=True, default=None)
+    rating = models.IntegerField(choices=STAR_RATING, blank=False, default=5)
     posted_date = models.DateTimeField(auto_now_add=True, blank=False)
 
     def __str__(self):
