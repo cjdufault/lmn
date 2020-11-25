@@ -146,4 +146,14 @@ class LoginFormTests(TestCase):
     pass
 
 class ProfileFormTests(TestCase):
-    pass
+    def test_more_than_500_characters_is_invalid(self):
+        five01 = 'a' * 501
+        form_data = { "bio": five01 }
+        form = ProfileForm(form_data)
+        self.assertFalse(form.is_valid())
+
+    def test_empty_is_invalid(self):
+        empty = ''
+        form_data = { "bio": empty }
+        form = ProfileForm(form_data)
+        self.assertTrue(form.is_valid())
