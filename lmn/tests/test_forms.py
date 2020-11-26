@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 from django.contrib.auth.models import User
-from lmn.forms import NewNoteForm, NoteSearchForm, UserRegistrationForm
+from lmn.forms import VenueSearchForm, ArtistSearchForm, NoteSearchForm, NewNoteForm, UserRegistrationForm
 import string
 
 # Test that forms are validating correctly, and don't accept invalid data
@@ -136,19 +136,43 @@ class LoginFormTests(TestCase):
 
 class SearchFormTests(TestCase):
 
-    def test_missing_search_is_invalid(self):
-        form_data = {"search_name": ""}
-        form = NoteSearchForm(form_data)
+    def setUp(self):
+        self.empty_name = {"search_name": ""}
+        self.long_string = {"search_name": 201 * 'a'}
+        self.normal_string = {"search_name": "search something"}
+
+    def test_missing_venue_search_is_invalid(self):
+        form = VenueSearchForm(self.empty_name)
         self.assertFalse(form.is_valid())
 
-    def test_long_search_is_invalid(self):
-        long_string = 201 * 'a'
-        form_data = {"search_name": long_string}
-        form = NoteSearchForm(form_data)
+    def test_long_venue_search_is_invalid(self):
+        form = VenueSearchForm(self.long_string)
         self.assertFalse(form.is_valid())
 
-    def test_search_is_valid(self):
-        normal_string = 'search things'
-        form_data = {"search_name": normal_string}
-        form = NoteSearchForm(form_data)
+    def test_venue_search_is_valid(self):
+        form = VenueSearchForm(self.normal_string)
+        self.assertTrue(form.is_valid())
+
+    def test_missing_artist_search_is_invalid(self):
+        form = ArtistSearchForm(self.empty_name)
+        self.assertFalse(form.is_valid())
+
+    def test_long_artist_search_is_invalid(self):
+        form = ArtistSearchForm(self.long_string)
+        self.assertFalse(form.is_valid())
+
+    def test_artist_search_is_valid(self):
+        form = ArtistSearchForm(self.normal_string)
+        self.assertTrue(form.is_valid())
+
+    def test_missing_note_search_is_invalid(self):
+        form = NoteSearchForm(self.empty_name)
+        self.assertFalse(form.is_valid())
+
+    def test_long_note_search_is_invalid(self):
+        form = NoteSearchForm(self.long_string)
+        self.assertFalse(form.is_valid())
+
+    def test_note_search_is_valid(self):
+        form = NoteSearchForm(self.normal_string)
         self.assertTrue(form.is_valid())
