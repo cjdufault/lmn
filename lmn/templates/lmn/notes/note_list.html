@@ -4,10 +4,11 @@
 
 {% if show %}
   <h2 id="show-title">Notes for {{ show.artist.name }} at {{ show.venue.name }} on {{ show.show_date }}</h2>
+{% elif my_notes %}
+<h2><a href="/notes/latest/">Latest Notes</a> | Notes from {{ user.username }}</h2>
 {% else %}
-  <h2>Latest Notes</h2>
+  <h2>Latest Notes | <a href="/notes/my_notes/">My Notes</a></h2>
 {% endif %}
-
 
 {% for note in notes %}
 

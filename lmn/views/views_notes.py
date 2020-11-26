@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 
 
-
 @login_required
 def new_note(request, show_pk):
 
@@ -26,7 +25,7 @@ def new_note(request, show_pk):
     else :
         form = NewNoteForm()
 
-    return render(request, 'lmn/notes/new_note.html' , { 'form': form , 'show': show })
+    return render(request, 'lmn/notes/new_note.html', { 'form': form, 'show': show })
 
 
 def latest_notes(request):
@@ -43,4 +42,9 @@ def notes_for_show(request, show_pk):
 
 def note_detail(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
-    return render(request, 'lmn/notes/note_detail.html' , { 'note': note })
+    return render(request, 'lmn/notes/note_detail.html', { 'note': note })
+
+@login_required
+def user_notes(request):
+    notes = Note.objects.filter(user=request.user).order_by('-posted_date')
+    return render(request, 'lmn/notes/note_list.html', { 'notes': notes, 'my_notes': True })
