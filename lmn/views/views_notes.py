@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
 from ..models import Venue, Artist, Note, Show
-from ..forms import VenueSearchForm, NewNoteForm, ArtistSearchForm, UserRegistrationForm
+from ..forms import VenueSearchForm, NewNoteForm, NoteSearchForm, UserRegistrationForm
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -46,5 +46,12 @@ def note_detail(request, note_pk):
 
 @login_required
 def user_notes(request):
-    notes = Note.objects.filter(user=request.user).order_by('-posted_date')
-    return render(request, 'lmn/notes/note_list.html', { 'notes': notes, 'my_notes': True })
+    form = NoteSearchForm()
+    search_note = request.GET.get('search_note')
+    if search_note:
+        notes = Note.objects.filter(user=request.user, title__icontains=search_note).order_by('-posted_date') | \
+                Note.objects.filter(user=request.user, text__icontains=search_note).order_by('-posted_date')
+    else:
+        notes = Note.objects.filter(user=request.user).order_by('-posted_date')
+    return render(request, 'lmn/notes/note_list.html', { 'notes': notes, 'my_notes': True, 'form': form,
+                                                         'search_term': search_note})
