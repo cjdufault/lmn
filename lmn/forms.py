@@ -15,7 +15,7 @@ class ArtistSearchForm(forms.Form):
 
 
 class NoteSearchForm(forms.Form):
-    search_note = forms.CharField(label='Note', max_length=200)
+    search_name = forms.CharField(label='Note', max_length=200)
 
 
 class NewNoteForm(forms.ModelForm):

@@ -47,11 +47,11 @@ def note_detail(request, note_pk):
 @login_required
 def user_notes(request):
     form = NoteSearchForm()
-    search_note = request.GET.get('search_note')
-    if search_note:
-        notes = Note.objects.filter(user=request.user, title__icontains=search_note).order_by('-posted_date') | \
-                Note.objects.filter(user=request.user, text__icontains=search_note).order_by('-posted_date')
+    search_name = request.GET.get('search_name')
+    if search_name:
+        notes = Note.objects.filter(user=request.user, title__icontains=search_name).order_by('-posted_date') | \
+                Note.objects.filter(user=request.user, text__icontains=search_name).order_by('-posted_date')
     else:
         notes = Note.objects.filter(user=request.user).order_by('-posted_date')
     return render(request, 'lmn/notes/note_list.html', { 'notes': notes, 'my_notes': True, 'form': form,
-                                                         'search_term': search_note})
+                                                         'search_term': search_name})
