@@ -23,7 +23,23 @@
     </p>
 
     <p class='note-text'>{{ note.text|truncatechars:100 }}</p>
+
     <p class='note-rating'>Rating: {{ note.rating }}</p>
+
+    <h3>Photo</h3>
+      {% if note.photo %}
+      <img src="{{ note.photo.url }}" style="width:300px;height:350px;">
+      {% else %}
+      <P>No Photo Uploaded</P>
+      {% endif %}
+
+      {% if messages %}
+        <div class="messages">
+      {% for message in messages %}
+        <p class="{{message.tags}}">{{ message }}</p>
+      {% endfor %}
+        </div>
+      {% endif %}
 
   </div>  
 
