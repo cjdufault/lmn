@@ -356,17 +356,16 @@ class TestAddNotesWhenUserLoggedIn(TestCase):
 
         new_note_url = reverse('new_note', kwargs={'show_pk':1})
 
-        response = self.client.post(new_note_url, {'text':'ok', 'title':'blah blah' }, follow=True)
+        response = self.client.post(new_note_url, {'text':'ok', 'title':'blah blah', 'rating': 1}, follow=True)
 
         # Verify note is in database
-        new_note_query = Note.objects.filter(text='ok', title='blah blah')
+        new_note_query = Note.objects.filter(text='ok', title='blah blah', rating=Note.STAR_RATING[0][0])
         self.assertEqual(new_note_query.count(), 1)
 
         # And one more note in DB than before
         self.assertEqual(Note.objects.count(), initial_note_count + 1)
 
-        # Date correct?
-        now = datetime.datetime.today()
+        now = datetime.datetime.utcnow()
         posted_date = new_note_query.first().posted_date
         self.assertEqual(now.date(), posted_date.date())  # TODO check time too
 
@@ -376,7 +375,7 @@ class TestAddNotesWhenUserLoggedIn(TestCase):
         initial_note_count = Note.objects.count()
 
         new_note_url = reverse('new_note', kwargs={'show_pk':1})
-        response = self.client.post(new_note_url, {'text':'ok', 'title':'blah blah' }, follow=True)
+        response = self.client.post(new_note_url, {'text':'ok', 'title':'blah blah', 'rating': 5 }, follow=True)
         new_note = Note.objects.filter(text='ok', title='blah blah').first()
 
         self.assertRedirects(response, reverse('note_detail', kwargs={'note_pk': new_note.pk }))

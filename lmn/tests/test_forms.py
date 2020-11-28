@@ -34,7 +34,6 @@ class NewNoteFormTests(TestCase):
             self.assertFalse(form.is_valid())
 
 
-
     def test_title_too_long_is_invalid(self):
         # Max length is 200
         form_data = { "title" : "a" * 201 }
@@ -48,9 +47,21 @@ class NewNoteFormTests(TestCase):
         form = NewNoteForm(form_data)
         self.assertFalse(form.is_valid())
 
+    def test_rating_less_than_zero_is_invalid(self):
+        # Rating less than zero is invalid
+        form_data = { "rating" :  -1}
+        form = NewNoteForm(form_data)
+        self.assertFalse(form.is_valid())
 
-    def test_ok_title_and_length_is_valid(self):
-        form_data = { "title": "blah blah", "text" : "blah, blah, blah."}
+    def test_rating_greater_than_five_is_invalid(self):
+        # Rating greater than five is invalid
+        form_data = { "rating" :  6}
+        form = NewNoteForm(form_data)
+        self.assertFalse(form.is_valid())
+
+    def test_ok_title_length_and_rating_is_valid(self):
+        # Title and length is valid and rating is also valid between 1-5
+        form_data = { "title": "blah blah", "text" : "blah, blah, blah.", "rating": 5}
         form = NewNoteForm(form_data)
         self.assertTrue(form.is_valid())
 
