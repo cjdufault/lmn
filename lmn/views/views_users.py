@@ -19,7 +19,7 @@ def user_profile(request, user_pk):
 @login_required
 def my_user_profile(request):
     if request.method == 'POST':
-        form = ProfileForm(request.POST, instance=request.user.profile)
+        form = ProfileForm(request.POST, instance=request.user.profile) if hasattr(request.user, 'profile') else  ProfileForm(request.POST)
         if form.is_valid():
             profile_form = form.save(commit=False)
             profile_form.user = request.user
@@ -27,7 +27,7 @@ def my_user_profile(request):
 
     user = request.user
     usernotes = Note.objects.filter(user=user.pk).order_by('-posted_date')
-    form = ProfileForm(instance=user.profile) if user.profile else ProfileForm()
+    form = ProfileForm(instance=user.profile) if hasattr(user, 'profile') else ProfileForm()
     data = {
         'user_profile': user,
         'notes': usernotes,
