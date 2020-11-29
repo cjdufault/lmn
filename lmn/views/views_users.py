@@ -45,7 +45,7 @@ def register(request):
             user = authenticate(username=request.POST['username'], password=request.POST['password1'])
             if user:
                 login(request, user)
-                return redirect('my_user_profile', user_pk=request.user.pk)
+                return redirect('my_user_profile')
             else:
                 messages.add_message(request, messages.ERROR, 'Unable to log in new user')
         else:
