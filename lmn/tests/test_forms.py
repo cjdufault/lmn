@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 from django.contrib.auth.models import User
-from lmn.forms import VenueSearchForm, ArtistSearchForm, NoteSearchForm, NewNoteForm, UserRegistrationForm
+from lmn.forms import VenueSearchForm, ArtistSearchForm, NoteSearchForm, NewNoteForm, UserRegistrationForm, ProfileForm
 import string
 
 # Test that forms are validating correctly, and don't accept invalid data
@@ -146,7 +146,6 @@ class LoginFormTests(TestCase):
    
     pass
 
-
 class SearchFormTests(TestCase):
 
     def setUp(self):
@@ -188,4 +187,18 @@ class SearchFormTests(TestCase):
 
     def test_note_search_is_valid(self):
         form = NoteSearchForm(self.normal_string)
+        self.assertTrue(form.is_valid())
+
+
+class ProfileFormTests(TestCase):
+    def test_more_than_500_characters_is_invalid(self):
+        five01 = 'a' * 501
+        form_data = { "bio": five01 }
+        form = ProfileForm(form_data)
+        self.assertFalse(form.is_valid())
+
+    def test_empty_is_invalid(self):
+        empty = ''
+        form_data = { "bio": empty }
+        form = ProfileForm(form_data)
         self.assertTrue(form.is_valid())
