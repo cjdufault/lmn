@@ -188,4 +188,4 @@ class ProfileFormTests(TestCase):
         empty = ''
         form_data = { "bio": empty }
         form = ProfileForm(form_data)
-        self.assertFalse(form.is_valid())
+        self.assertTrue(form.is_valid())
