@@ -1,6 +1,6 @@
 import requests
 from .models import Artist, Venue, Show
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseServerError
 import os
 import logging
 from urllib import parse
@@ -9,6 +9,8 @@ from django.db import IntegrityError
 
 key = os.environ.get('TICKETMASTER_KEY')
 baseUrl = 'https://app.ticketmaster.com/discovery/v2/'
+
+unavailable_message = 'There was a problem. Try again later.'
 
 def get_events():
     designted_market_area = '336' # https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#supported-dma
@@ -37,6 +39,7 @@ def get_artist(request):
 
     except Exception as e:
         logging.error(f'Error: {e}')
+        return HttpResponseServerError(unavailable_message)
 
 
 def get_venue(request):
@@ -62,6 +65,8 @@ def get_venue(request):
 
     except Exception as e:
         logging.error(f'Error: {e}')
+        return HttpResponseServerError(unavailable_message)
+
 
 
 def get_show(request):
@@ -85,3 +90,6 @@ def get_show(request):
 
     except Exception as e:
         logging.error(f'Error: {e}')
+        return HttpResponseServerError(unavailable_message)
+
+
