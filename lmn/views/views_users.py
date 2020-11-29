@@ -27,7 +27,7 @@ def my_user_profile(request):
 
     user = request.user
     usernotes = Note.objects.filter(user=user.pk).order_by('-posted_date')
-    form = ProfileForm(instance=user.profile)
+    form = ProfileForm(instance=user.profile) if user.profile else ProfileForm()
     data = {
         'user_profile': user,
         'notes': usernotes,
@@ -45,7 +45,7 @@ def register(request):
             user = authenticate(username=request.POST['username'], password=request.POST['password1'])
             if user:
                 login(request, user)
-                return redirect('user_profile', user_pk=request.user.pk)
+                return redirect('my_user_profile', user_pk=request.user.pk)
             else:
                 messages.add_message(request, messages.ERROR, 'Unable to log in new user')
         else:
