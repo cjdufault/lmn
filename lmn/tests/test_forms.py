@@ -60,6 +60,8 @@ class NewNoteFormTests(TestCase):
     def test_ok_title_length_and_rating_is_valid(self):
         # Title and length is valid and rating is valid with values 1-5
         form_data = { "title": "blah blah", "text" : "blah, blah, blah.", "rating": 5}
+        form = NewNoteForm(form_data)
+        self.assertTrue(form.is_valid())
 
 
 class RegistrationFormTests(TestCase):
