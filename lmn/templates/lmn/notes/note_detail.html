@@ -1,14 +1,12 @@
 {% extends 'lmn/base.html' %}
 {% block content %}
 
-
 <h2 id="note-page-title">{{ note.show.artist.name }} at {{ note.show.venue.name }} by 
     <a href="{% url 'user_profile' user_pk=note.user.pk %}">{{ user.username }}</a>
 </h2>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0" nonce="7hiivJAz"></script>
-<p id="note-title"><b>{{ note.title}}</b></p>
-<p id="note-text"><b>{{ note.text }}</b></p>
+{% include './_note.html' %}
 <p id="note-social">
 <a class="fb-share-button" data-layout="button" data-size="small" target="_blank"
    href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F{{ request.get_host }}%2Fnotes%2Fdetail%2F{{ note.pk }}%2F&amp;src=sdkpreparse"
@@ -17,5 +15,11 @@
 http%3A%2F%2F{{ request.get_host }}%2Fnotes%2Fdetail%2F{{ note.pk }}%2F"
        data-size="small" target="_blank" class="twitter-share-button" data-show-count="false">Tweet</a>
 </p>
+<a onclick="goBack()" id="pointer">Go Back</a>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 {% endblock %}

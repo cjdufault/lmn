@@ -30,10 +30,6 @@ def new_note(request, show_pk):
 
 def latest_notes(request):
     notes = Note.objects.all().order_by('-posted_date')
-    STAR_RATING = ['★', '★★', '★★★', '★★★★', '★★★★★']
-    for note in notes:
-        rating = note.rating
-        note.star_rating = STAR_RATING[rating - 1]
     return render(request, 'lmn/notes/note_list.html', { 'notes': notes })
 
 
@@ -47,6 +43,7 @@ def notes_for_show(request, show_pk):
 def note_detail(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
     return render(request, 'lmn/notes/note_detail.html', { 'note': note })
+
 
 @login_required
 def user_notes(request):

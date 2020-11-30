@@ -1,0 +1,20 @@
+<div id="note_{{ note.pk }}" onclick="location.href='/notes/detail/{{ note.pk }}';">
+    <h3 class="note-title">{{ note.title }}</h3>
+    <p class="show-info">
+        <a href="{% url 'notes_for_show' show_pk=note.show.pk %}">{{ note.show.artist.name }} at {{ note.show.venue.name }} on {{ note.show.show_date }}</a>
+    </p>
+    <p class="note-info">Posted on {{ note.posted_date }} by
+        <a class='user' href="{% url 'user_profile' user_pk=note.user.pk %}">{{ note.user.username }}</a>
+    </p>
+    <p class='note-text'>{{ note.text|truncatechars:100 }}</p>
+    <p class='note-rating'>Rating:
+        {% for star in '12345' %}
+            {% if star|add:'0' <= note.rating %}
+                <span class="fa fa-star checked"></span>
+            {% else %}
+                <span class="fa fa-star"></span>
+            {% endif %}
+        {% endfor %}
+    </p>
+</div>
+<hr>
