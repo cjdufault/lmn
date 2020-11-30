@@ -6,7 +6,7 @@
 </h2>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0" nonce="7hiivJAz"></script>
-{% include './_note.html' %}
+{% include './_note.html' with long=True %}
 <p id="note-social">
 <a class="fb-share-button" data-layout="button" data-size="small" target="_blank"
    href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F{{ request.get_host }}%2Fnotes%2Fdetail%2F{{ note.pk }}%2F&amp;src=sdkpreparse"

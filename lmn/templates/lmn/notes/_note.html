@@ -6,7 +6,11 @@
     <p class="note-info">Posted on {{ note.posted_date }} by
         <a class='user' href="{% url 'user_profile' user_pk=note.user.pk %}">{{ note.user.username }}</a>
     </p>
-    <p class='note-text'>{{ note.text|truncatechars:100 }}</p>
+    {% if long %}
+        <p class='note-text'>{{ note.text }}</p>
+    {% else %}
+        <p class='note-text'>{{ note.text|truncatechars:100 }}</p>
+    {% endif %}
     <p class='note-rating'>Rating:
         {% for star in '12345' %}
             {% if star|add:'0' <= note.rating %}
