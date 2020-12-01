@@ -37,4 +37,20 @@
 
 {% endfor %}
 
+<div>
+  <span>
+    {% if artists.has_previous %}
+      <a href="?page=1">&laquo; First</a>
+      <a href="?page={{ artists.previous_page_number }}">Previous</a>
+    {% endif %}
+  
+    <span>Page {{ artists.number }} of {{ artists.paginator.num_pages }}</span>
+    
+    {% if artists.has_next %}
+      <a href="?page={{ artists.next_page_number }}">Next</a>
+      <a href="?page={{ artists.paginator.num_pages }}">Last &raquo;</a>
+    {% endif %}
+  </span>
+</div>
+
 {% endblock %}
