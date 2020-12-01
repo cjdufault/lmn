@@ -32,8 +32,12 @@ def artists_at_venue(request, venue_pk):   # pk = venue_pk
 
     shows = Show.objects.filter(venue=venue_pk).order_by('-show_date') 
     venue = Venue.objects.get(pk=venue_pk)
+    
+    paginator = Paginator(shows, 25)
+    page_number = request.GET.get('page')
+    page_object = paginator.get_page(page_number)
 
-    return render(request, 'lmn/artists/artist_list_for_venue.html', { 'venue': venue, 'shows': shows })
+    return render(request, 'lmn/artists/artist_list_for_venue.html', { 'venue': venue, 'shows': page_object })
 
 
 def venue_detail(request, venue_pk):
