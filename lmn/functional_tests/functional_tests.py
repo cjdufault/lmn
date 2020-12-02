@@ -641,7 +641,7 @@ class TestProfilePage(LiveServerTestCase):
         # Get alice's (user 1) profile - one note
         self.browser.get(self.live_server_url + '/user/profile/1')
         title = self.browser.find_element_by_id('username_notes')
-        assert 'alice\'s notes' in title.text
+        assert 'alice\'s Notes' in title.text
 
         note_divs = self.browser.find_elements_by_class_name('note')
         assert len(note_divs) is 1

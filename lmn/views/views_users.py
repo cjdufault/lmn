@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-from ..models import Venue, Artist, Note, Show
-from ..forms import VenueSearchForm, NewNoteForm, ArtistSearchForm, UserRegistrationForm
+from ..models import Venue, Artist, Note, Show, Profile
+from ..forms import VenueSearchForm, NewNoteForm, ArtistSearchForm, UserRegistrationForm, ProfileForm
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -18,8 +18,23 @@ def user_profile(request, user_pk):
 
 @login_required
 def my_user_profile(request):
-    # TODO - editable version for logged-in user to edit their own profile
-    return redirect('user_profile', user_pk=request.user.pk)
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=request.user.profile) if hasattr(request.user, 'profile') else  ProfileForm(request.POST)
+        if form.is_valid():
+            profile_form = form.save(commit=False)
+            profile_form.user = request.user
+            profile_form.save()
+
+    user = request.user
+    usernotes = Note.objects.filter(user=user.pk).order_by('-posted_date')
+    form = ProfileForm(instance=user.profile) if hasattr(user, 'profile') else ProfileForm()
+    data = {
+        'user_profile': user,
+        'notes': usernotes,
+        'form': form,
+    }
+
+    return render(request, 'lmn/users/my_user_profile.html', data)
 
 
 def register(request):
@@ -30,7 +45,7 @@ def register(request):
             user = authenticate(username=request.POST['username'], password=request.POST['password1'])
             if user:
                 login(request, user)
-                return redirect('user_profile', user_pk=request.user.pk)
+                return redirect('my_user_profile')
             else:
                 messages.add_message(request, messages.ERROR, 'Unable to log in new user')
         else:
@@ -40,3 +55,9 @@ def register(request):
 
     form = UserRegistrationForm()
     return render(request, 'registration/register.html', {'form': form} )
+
+
+def logout_user(request):
+    username = request.user.username
+    logout(request)
+    return render(request, 'registration/logout.html', { 'username': username })
