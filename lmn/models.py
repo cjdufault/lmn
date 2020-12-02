@@ -1,8 +1,5 @@
 from django.db import models
-
-from django.db import models
 from django.contrib.auth.models import User
-import datetime
 from django.core.files.storage import default_storage
 
 
@@ -62,7 +59,7 @@ class Note(models.Model):
     show = models.ForeignKey(Show, blank=False, on_delete=models.CASCADE)
     user = models.ForeignKey('auth.User', blank=False, on_delete=models.CASCADE)
     title = models.CharField(max_length=200, blank=False)
-    text = models.TextField(max_length=1000, blank=False)
+    text = models.TextField(max_length=2000, blank=False)
     rating = models.IntegerField(choices=STAR_RATING, blank=True, default=None)
     posted_date = models.DateField(blank=True, null=True)
     photo = models.ImageField(upload_to='user_images/', blank=True, null=True)
@@ -91,5 +88,5 @@ class Note(models.Model):
 
     def __str__(self):
         photo_str = self.photo.url if self.photo else 'no photo'
-        return f'Note for user {self.user} for show ID {self.show} with title {self.title} text {self.text} posted on {self.posted_date} \nPhoto {photo_str}'
+        return f'Note for user {self.user} for show ID {self.show} with title {self.title} text {self.text} posted on: {self.posted_date} \nPhoto {photo_str}'
 
