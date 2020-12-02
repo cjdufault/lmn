@@ -1,5 +1,5 @@
-<div id="note_{{ note.pk }}" onclick="location.href='/notes/detail/{{ note.pk }}';">
-    <h3 class="note-title">{{ note.title }}</h3>
+<div id="note_{{ note.pk }}">
+    <h2 class="note-title"><a href="/notes/detail/{{ note.pk }}">{{ note.title }}</a></h2>
     <p class="show-info">
         <a href="{% url 'notes_for_show' show_pk=note.show.pk %}">{{ note.show.artist.name }} at {{ note.show.venue.name }} on {{ note.show.show_date }}</a>
     </p>
