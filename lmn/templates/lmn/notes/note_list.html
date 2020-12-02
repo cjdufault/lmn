@@ -23,7 +23,8 @@
 
     <p class='note-text'>{{ note.text|truncatechars:100 }}</p>
 
-    <p class='note-rating'>Rating: {{ note.rating }}</p>
+    <p class='note-rating'>Rating: {{ note.star_rating }}</p>
+
 
     <h3>Photo</h3>
       {% if note.photo %}
