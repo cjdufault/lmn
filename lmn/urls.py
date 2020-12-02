@@ -18,6 +18,7 @@ urlpatterns = [
 
     # Note related
     path('notes/latest/', views_notes.latest_notes, name='latest_notes'),
+    path('notes/my_notes/', views_notes.user_notes, name='user_notes'),
     path('notes/detail/<int:note_pk>/', views_notes.note_detail, name='note_detail'),
     path('notes/for_show/<int:show_pk>/', views_notes.notes_for_show, name='notes_for_show'),
     path('notes/add/<int:show_pk>/', views_notes.new_note, name='new_note'),
@@ -33,7 +34,7 @@ urlpatterns = [
 
     # Account related
     path('accounts/login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
-    path('accounts/logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
+    path('accounts/logout/', views_users.logout_user, name='logout'),
     path('register/', views_users.register, name='register'),
 
     # Api related

@@ -19,13 +19,17 @@ User._meta.get_field('email')._blank = False
 User._meta.get_field('last_name')._blank = False
 User._meta.get_field('first_name')._blank = False
 
+class Profile(models.Model):
+    bio = models.TextField(max_length=500, blank=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
 
 """ A music artist """
 class Artist(models.Model):
-    name = models.CharField(max_length=200, blank=False)
+    name = models.CharField(max_length=200, blank=False, unique=True)
 
     def __str__(self):
-        return f'Artist: {self.name}'
+        return f'Name: {self.name}'
 
 
 """ A venue, that hosts shows. """
@@ -35,7 +39,7 @@ class Venue(models.Model):
     state = models.CharField(max_length=2, blank=False) 
 
     def __str__(self):
-        return f'Venue name: {self.name} in {self.city}, {self.state}'
+        return f'Name: {self.name} Location: {self.city}, {self.state}'
 
 
 """ A show - one artist playing at one venue at a particular date. """
@@ -45,7 +49,7 @@ class Show(models.Model):
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'Show with artist {self.artist} at {self.venue} on {self.show_date}'
+        return f'Artist: {self.artist} At: {self.venue} On: {self.show_date}'
 
 
 """ One user's opinion of one show. """
