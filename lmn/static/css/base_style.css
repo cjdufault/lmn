@@ -18,3 +18,11 @@ a {
   color: #e60c42;
   font-weight: bold;
 }
+
+.checked {
+  color: orange;
+}
+
+#pointer {
+    cursor: pointer;
+}
