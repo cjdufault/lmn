@@ -57,5 +57,4 @@ def user_notes(request):
                 Note.objects.filter(user=request.user, text__icontains=search_name).order_by('-posted_date')
     else:
         notes = Note.objects.filter(user=request.user).order_by('-posted_date')
-    return render(request, 'lmn/notes/note_list.html', {'notes': notes, 'my_notes': True, 'form': form,
-                                                        'search_term': search_name})
+    return render(request, 'lmn/notes/note_list.html', {'notes': notes, 'my_notes': True, 'form': form, 'search_term': search_name})
