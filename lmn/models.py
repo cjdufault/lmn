@@ -95,4 +95,3 @@ class Note(models.Model):
     def __str__(self):
         photo_str = self.photo.url if self.photo else 'no photo'
         return f'Note for user {self.user} for show ID {self.show} with title {self.title} text {self.text} posted on {self.posted_date} \nPhoto {photo_str}'
-
