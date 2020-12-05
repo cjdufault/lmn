@@ -10,6 +10,7 @@
 
 {% for note in notes %}
 
+
   <div id="note_{{ note.pk }}">
     <h3 class="note-title">{{ note.title }}</h3>
 
@@ -44,6 +45,8 @@
   </div>  
 
   <hr>
+  {% include './_note.html' %}
+
 
 {% empty %}
 
