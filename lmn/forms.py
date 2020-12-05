@@ -21,7 +21,7 @@ class NoteSearchForm(forms.Form):
 class NewNoteForm(forms.ModelForm):
     class Meta:
         model = Note
-        fields = ('title', 'text', 'rating', 'photo')
+        fields = ('title', 'text', 'rating', 'posted_date', 'photo')
 
 
 
