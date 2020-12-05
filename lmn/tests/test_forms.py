@@ -6,6 +6,10 @@ import string
 import shutil
 from PIL import Image 
 
+import tempfile
+import filecmp
+import os 
+
 # Test that forms are validating correctly, and don't accept invalid data
 
 
@@ -172,17 +176,19 @@ class TestImageUpload(TestCase):
         img_file_path = self.create_temp_image_file()
 
         with self.settings(MEDIA_ROOT=self.MEDIA_ROOT):
-            resp = self.client.post(reverse('new_note', kwargs={'show_pk': 1}), {'photo': img_file}, follow = True )
+            
+            with open(img_file_path, 'rb') as img_file:
+                resp = self.client.post(reverse('new_note', kwargs={'show_pk': 1}), {'photo': img_file}, follow = True )
 
-            self.assertEqual(200, resp.status_code)
+                self.assertEqual(200, resp.status_code)
 
-            note_1 = Note.objects.get(pk=1)
-            img_file_name = os.path.basename(img_file_path)
-            expected_uploaded_file_path = os.path.join(self.MEDIA_ROOT, 'user_images', img_file_name)
+                note_1 = Note.objects.get(pk=1)
+                img_file_name = os.path.basename(img_file_path)
+                expected_uploaded_file_path = os.path.join(self.MEDIA_ROOT, 'user_images', img_file_name)
 
-            self.assertTrue(os.path.exists(expected_uploaded_file_path))
-            self.assertIsNotNone(note_1.photo)
-            self.assertTrue(filecmp.cmp(img_file_path, expected_uploaded_file_path))
+                self.assertTrue(os.path.exists(expected_uploaded_file_path))
+                self.assertIsNotNone(note_1.photo)
+                self.assertTrue(filecmp.cmp(img_file_path, expected_uploaded_file_path))
 
 
 
