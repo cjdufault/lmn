@@ -6,6 +6,9 @@
     <p class="note-info">Posted on {{ note.posted_date }} by
         <a class='user' href="{% url 'user_profile' user_pk=note.user.pk %}">{{ note.user.username }}</a>
     </p>
+    {% if note.photo.url %}
+        <img src='{{ note.photo.url }}' >
+    {% endif %}
     {% if long %}
         <p class='note-text'>{{ note.text }}</p>
     {% else %}
