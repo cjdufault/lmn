@@ -487,7 +487,6 @@ class TestBestShows(TestCase):
         self.assertEqual(first.rating, 5)
 
 
-
 class TestUserAuthentication(TestCase):
 
     ''' Some aspects of registration (e.g. missing data, duplicate username) covered in test_forms '''
