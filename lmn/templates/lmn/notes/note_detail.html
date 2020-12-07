@@ -56,7 +56,7 @@ function goBack() {
   </form>
  
 {% endif %}
-<!--add button which has to be placed after {% endif %} and {% endblock %}-->   
+  
 <form action="{% url 'delete_note' note.pk %}" method="POST">
     {% csrf_token %}
     <button type="submit" class="delete">Delete</button>
