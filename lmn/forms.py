@@ -3,7 +3,7 @@ from .models import Note, Profile
 
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.forms import ValidationError, DateInput
+from django.forms import ValidationError
 
 
 class VenueSearchForm(forms.Form):
@@ -17,11 +17,16 @@ class ArtistSearchForm(forms.Form):
 class NoteSearchForm(forms.Form):
     search_name = forms.CharField(label='Note', max_length=200)
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
 
 class NewNoteForm(forms.ModelForm):
     class Meta:
         model = Note
         fields = ('title', 'text', 'rating', 'posted_date', 'photo')
+        widgets = {
+            'posted_date': DateInput()
+        }
 
 
 

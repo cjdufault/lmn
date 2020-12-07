@@ -7,17 +7,6 @@
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0" nonce="7hiivJAz"></script>
 
-<p id="note-title"><b>{{ note.title}}</b></p>
-<p id="note-text">{{ note.text }}</b>
-
-<form action="{% url 'note_detail' note.pk %}" Method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ review_form.as_p }}
-    <button type="submit">Save Note</button>
-</form>
-
-<p id="note-text"><b>{{ note.text }}</b></p>
-
 {% include './_note.html' with long=True %}
 
 <p id="note-social">
