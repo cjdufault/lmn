@@ -119,7 +119,7 @@ class TestArtistViews(TestCase):
 
         url = reverse('venues_for_artist', kwargs={'artist_pk':1})
         response = self.client.get(url)
-        shows = list(response.context['shows'].all())
+        shows = list(response.context['shows'])
         show1, show2 = shows[0], shows[1]
         self.assertEqual(2, len(shows))
 
@@ -138,7 +138,7 @@ class TestArtistViews(TestCase):
 
         url = reverse('venues_for_artist', kwargs={'artist_pk':2})
         response = self.client.get(url)
-        shows = list(response.context['shows'].all())
+        shows = list(response.context['shows'])
         show1 = shows[0]
         self.assertEqual(1, len(shows))
 
@@ -151,7 +151,7 @@ class TestArtistViews(TestCase):
 
         url = reverse('venues_for_artist', kwargs={'artist_pk':3})
         response = self.client.get(url)
-        shows = list(response.context['shows'].all())
+        shows = list(response.context['shows'])
         self.assertEqual(0, len(shows))
 
 
@@ -230,7 +230,7 @@ class TestVenues(TestCase):
 
         url = reverse('artists_at_venue', kwargs={'venue_pk':2})
         response = self.client.get(url)
-        shows = list(response.context['shows'].all())
+        shows = list(response.context['shows'])
         show1, show2 = shows[0], shows[1]
         self.assertEqual(2, len(shows))
 
@@ -249,7 +249,7 @@ class TestVenues(TestCase):
 
         url = reverse('artists_at_venue', kwargs={'venue_pk':1})
         response = self.client.get(url)
-        shows = list(response.context['shows'].all())
+        shows = list(response.context['shows'])
         show1 = shows[0]
         self.assertEqual(1, len(shows))
 
@@ -262,7 +262,7 @@ class TestVenues(TestCase):
 
         url = reverse('artists_at_venue', kwargs={'venue_pk':3})
         response = self.client.get(url)
-        shows = list(response.context['shows'].all())
+        shows = list(response.context['shows'])
         self.assertEqual(0, len(shows))
 
     def test_correct_template_used_for_venues(self):
