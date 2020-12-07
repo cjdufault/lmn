@@ -534,3 +534,43 @@ class TestMyUserProfile(TestCase):
     def test_user_bio_is_not_on_other_users_profile_page(self):
         response = self.client.get(reverse('user_profile', kwargs={'user_pk':2}))
         self.assertNotContains(response, 'This bio should be avilable on the page for user 1')
+        
+
+class TestPagination(TestCase):
+    fixtures = ['testing_users', 'testing_artists_multi_page', 'testing_venues_multi_page', 'testing_shows', 'testing_notes_multi_page']
+    
+    def test_artists_multi_page(self):
+        
+        # 1st page, should have 25 items
+        response = self.client.get(reverse('artist_list'))
+        context = response.context['artists']
+        self.assertEqual(len(context), 25)
+        
+        # 2nd page, should have only 1
+        response = self.client.get(reverse('artist_list') + '?page=2')
+        context = response.context['artists']
+        self.assertEqual(len(context), 1)
+        
+    def test_venues_multi_page(self):
+        
+        # 1st page, should have 25 items
+        response = self.client.get(reverse('venue_list'))
+        context = response.context['venues']
+        self.assertEqual(len(context), 25)
+        
+        # 2nd page, should have only 1
+        response = self.client.get(reverse('venue_list') + '?page=2')
+        context = response.context['venues']
+        self.assertEqual(len(context), 1)
+    
+    def test_notes_multi_page(self):
+        
+        # 1st page, should have 25 items
+        response = self.client.get(reverse('latest_notes'))
+        context = response.context['notes']
+        self.assertEqual(len(context), 25)
+        
+        # 2nd page, should have only 1
+        response = self.client.get(reverse('latest_notes') + '?page=2')
+        context = response.context['notes']
+        self.assertEqual(len(context), 1)

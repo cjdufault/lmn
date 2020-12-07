@@ -76,50 +76,5 @@
   },
   {"model" : "lmn.artist", "pk" : 26 , "fields" :
     { "name" : "test26"}
-  },
-  {"model" : "lmn.artist", "pk" : 27 , "fields" :
-    { "name" : "test27"}
-  },
-  {"model" : "lmn.artist", "pk" : 28 , "fields" :
-    { "name" : "test28"}
-  },
-  {"model" : "lmn.artist", "pk" : 29 , "fields" :
-    { "name" : "test29"}
-  },
-  {"model" : "lmn.artist", "pk" : 30 , "fields" :
-    { "name" : "test30"}
-  },
-  {"model" : "lmn.artist", "pk" : 31 , "fields" :
-    { "name" : "test31"}
-  },
-  {"model" : "lmn.artist", "pk" : 32 , "fields" :
-    { "name" : "test32"}
-  },
-  {"model" : "lmn.artist", "pk" : 33 , "fields" :
-    { "name" : "test33"}
-  },
-  {"model" : "lmn.artist", "pk" : 34 , "fields" :
-    { "name" : "test34"}
-  },
-  {"model" : "lmn.artist", "pk" : 35 , "fields" :
-    { "name" : "test35"}
-  },
-  {"model" : "lmn.artist", "pk" : 36 , "fields" :
-    { "name" : "test36"}
-  },
-  {"model" : "lmn.artist", "pk" : 37 , "fields" :
-    { "name" : "test37"}
-  },
-  {"model" : "lmn.artist", "pk" : 38 , "fields" :
-    { "name" : "test38"}
-  },
-  {"model" : "lmn.artist", "pk" : 39 , "fields" :
-    { "name" : "test39"}
-  },
-  {"model" : "lmn.artist", "pk" : 40 , "fields" :
-    { "name" : "test40"}
-  },
-  {"model" : "lmn.artist", "pk" : 41 , "fields" :
-    { "name" : "test41"}
   }
 ]

@@ -18,7 +18,7 @@ def venues_for_artist(request, artist_pk):   # pk = artist_pk
     shows = Show.objects.filter(artist=artist_pk).order_by('-show_date')  # most recent first
     artist = Artist.objects.get(pk=artist_pk)
     
-    paginator = Paginator(shows, 20)
+    paginator = Paginator(shows, 25)
     page_number = request.GET.get('page')
     page_object = paginator.get_page(page_number)
 
@@ -34,7 +34,7 @@ def artist_list(request):
     else:
         artists = Artist.objects.all().order_by('name')
         
-    paginator = Paginator(artists, 20)
+    paginator = Paginator(artists, 25)
     page_number = request.GET.get('page')
     page_object = paginator.get_page(page_number)
 
