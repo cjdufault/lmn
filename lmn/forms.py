@@ -17,11 +17,16 @@ class ArtistSearchForm(forms.Form):
 class NoteSearchForm(forms.Form):
     search_name = forms.CharField(label='Note', max_length=200)
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
 
 class NewNoteForm(forms.ModelForm):
     class Meta:
         model = Note
-        fields = ('title', 'text', 'rating')
+        fields = ('title', 'text', 'rating', 'posted_date', 'photo')
+        widgets = {
+            'posted_date': DateInput()
+        }
 
 
 

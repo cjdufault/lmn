@@ -134,6 +134,10 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'www', 'static')
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 if os.getenv('GAE_INSTANCE'):
     GS_STATIC_FILE_BUCKET = 'lmnop-295416.appspot.com'
     STATIC_URL = f'https://storage.cloud.google.com/{GS_STATIC_FILE_BUCKET}/static/'

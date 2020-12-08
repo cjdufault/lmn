@@ -3,6 +3,12 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from lmn.forms import VenueSearchForm, ArtistSearchForm, NoteSearchForm, NewNoteForm, UserRegistrationForm, ProfileForm
 import string
+import shutil
+from PIL import Image 
+
+import tempfile
+import filecmp
+import os 
 
 # Test that forms are validating correctly, and don't accept invalid data
 
@@ -145,6 +151,46 @@ class LoginFormTests(TestCase):
     # TODO username not case sensitive - bob and BOB and Bob are the same
    
     pass
+
+
+class TestImageUpload(TestCase):
+
+    fixtures = ['test_users', 'test_places']    
+
+    def setUp(self):
+        user = User.objects.get(pk=1)
+        self.client.force_login(user)
+        self.MEDIA_ROOT = tempfile.mkdtemp()
+
+    def tearDown(self):
+        shutil.rmtree(MEDIA_ROOT)
+
+    def create_temp_image_file(self):
+        handle, tmp_img_file = tempfile.mkstemp(suffix='.jpg')
+        img = Image.new('RGB', (10, 10) )
+        img.save(tmp_img_file, format='JPEG')
+        return tmp_img_file
+
+    def test_upload_image_for_own_note(self):
+
+        img_file_path = self.create_temp_image_file()
+
+        with self.settings(MEDIA_ROOT=self.MEDIA_ROOT):
+            
+            with open(img_file_path, 'rb') as img_file:
+                resp = self.client.post(reverse('new_note', kwargs={'show_pk': 1}), {'photo': img_file}, follow = True )
+
+                self.assertEqual(200, resp.status_code)
+
+                note_1 = Note.objects.get(pk=1)
+                img_file_name = os.path.basename(img_file_path)
+                expected_uploaded_file_path = os.path.join(self.MEDIA_ROOT, 'user_images', img_file_name)
+
+                self.assertTrue(os.path.exists(expected_uploaded_file_path))
+                self.assertIsNotNone(note_1.photo)
+                self.assertTrue(filecmp.cmp(img_file_path, expected_uploaded_file_path))
+
+
 
 class SearchFormTests(TestCase):
 

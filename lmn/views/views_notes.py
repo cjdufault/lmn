@@ -16,7 +16,7 @@ def new_note(request, show_pk):
     show = get_object_or_404(Show, pk=show_pk)
 
     if request.method == 'POST' :
-        form = NewNoteForm(request.POST)
+        form = NewNoteForm(request.POST, request.FILES)
         if form.is_valid():
             note = form.save(commit=False)
             note.user = request.user
@@ -66,10 +66,10 @@ def user_notes(request):
                 Note.objects.filter(user=request.user, text__icontains=search_name).order_by('-posted_date')
     else:
         notes = Note.objects.filter(user=request.user).order_by('-posted_date')
-        
     paginator = Paginator(notes, 25)
     page_number = request.GET.get('page')
     page_object = paginator.get_page(page_number)
         
     return render(request, 'lmn/notes/note_list.html', {'notes': page_object, 'my_notes': True, 'form': form,
                                                         'search_term': search_name})
+
