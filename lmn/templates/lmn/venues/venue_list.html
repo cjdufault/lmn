@@ -36,6 +36,22 @@
     {% endfor %}
 
     </div>
+    
+    <div>
+      <span>
+        {% if venues.has_previous %}
+          <a href="?page=1">&laquo; First</a>
+          <a href="?page={{ venues.previous_page_number }}">Previous</a>
+        {% endif %}
+    
+        <span>Page {{ venues.number }} of {{ venues.paginator.num_pages }}</span>
+        
+        {% if venues.has_next %}
+          <a href="?page={{ venues.next_page_number }}">Next</a>
+          <a href="?page={{ venues.paginator.num_pages }}">Last &raquo;</a>
+        {% endif %}
+      </span>
+    </div>
 
 </div>
 
