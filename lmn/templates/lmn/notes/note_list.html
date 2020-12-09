@@ -1,7 +1,6 @@
 {% extends 'lmn/base.html' %}
 {% block content %}
 
-
 {% if show %}
   <h2 id="show-title">Notes for {{ show.artist.name }} at {{ show.venue.name }} on {{ show.show_date }}</h2>
 {% elif my_notes %}
@@ -17,18 +16,30 @@
   </form>
   {% endif %}
 {% else %}
-  <h2>Latest Notes | <a href="/notes/my_notes/">My Notes</a></h2>
-{% endif %}
+  <h2>Latest Notes | <a href="/notes/my_notes/">My Notes</a></h2>{% endif %}
+
 
 {% for note in notes %}
-
   {% include './_note.html' %}
-
 {% empty %}
-
   <p>No notes.</p>
-
 {% endfor %}
+
+<div>
+  <span>
+    {% if notes.has_previous %}
+      <a href="?page=1">&laquo; First</a>
+      <a href="?page={{ notes.previous_page_number }}">Previous</a>
+    {% endif %}
+  
+    <span>Page {{ notes.number }} of {{ notes.paginator.num_pages }}</span>
+    
+    {% if notes.has_next %}
+      <a href="?page={{ notes.next_page_number }}">Next</a>
+      <a href="?page={{ notes.paginator.num_pages }}">Last &raquo;</a>
+    {% endif %}
+  </span>
+</div>
 
 <!-- If this is a list of notes for one show,
 display link to add new note for that show. -->

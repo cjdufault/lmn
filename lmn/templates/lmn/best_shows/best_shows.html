@@ -8,16 +8,9 @@
   <h2>Best Shows</h2>
 {% endif %}
 
-
 {% for note in notes %}
-
-  {% include './_note.html' %}
-
-{% empty %}
-
+  {% include 'lmn/notes/_note.html' %}
+  {% empty %}
   <p>No notes.</p>
-
 {% endfor %}
-
-
 {% endblock %}
