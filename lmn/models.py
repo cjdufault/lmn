@@ -32,9 +32,13 @@ class Artist(models.Model):
 
 """ A venue, that hosts shows. """
 class Venue(models.Model):
-    name = models.CharField(max_length=200, blank=False, unique=True)
+    uuid = models.CharField(max_length=200, blank=False, unique=True, default='0')
+    name = models.CharField(max_length=200, blank=False)
+    address = models.CharField(max_length=200, blank=False)
     city = models.CharField(max_length=200, blank=False)
-    state = models.CharField(max_length=2, blank=False) 
+    state = models.CharField(max_length=2, blank=False)
+    zip_code = models.CharField(max_length=200, blank=False)
+    thumbnail = models.CharField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return f'Name: {self.name} Location: {self.city}, {self.state}'

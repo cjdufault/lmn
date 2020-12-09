@@ -57,8 +57,26 @@ def get_venue(request):
                 venue_name = result['name']
                 venue_city = result['city']['name']
                 venue_state = result['state']['name']
-                Venue(name=venue_name, city=venue_city, state=venue_state).save()
+                address = None
+                if result.get('address'):
+                    address = result.get('address').get('line1')
+                
+                thumbnail = '/static/images/default-image.png'
+                if result.get('images'):
+                    for image in result.get('images'):
+                        if image['ratio'] == '3_1':
+                            thumbnail =  image['url']
+                Venue(
+                uuid=result.get('id'),
+                address=address,
+                name=venue_name,
+                city=venue_city,
+                state=venue_state,
+                thumbnail=thumbnail).save()
             except IntegrityError as e:
+                logging.error(f'Error: {e}')
+
+            except Exception as e:
                 logging.error(f'Error: {e}')
 
         return HttpResponse('ok')
