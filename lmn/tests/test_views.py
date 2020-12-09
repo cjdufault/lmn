@@ -10,7 +10,30 @@ from django.contrib.auth.models import User
 import re, datetime
 from datetime import timezone
 
-# TODO verify correct templates are rendered.
+# TODO verify correct templates are rendered.class TestDeleteNotes(TestCase):
+
+    fixtures = ['testing_artists', 'testing_venues', 'testing_shows', 'testing_users', 'testing_notes']
+
+    def setUp(self):
+        user = User.objects.get(pk=1)  # alice - from the fixtures
+        self.client.force_login(user)    
+
+    def test_user_delete_own_note(self):
+        request_url = reverse('delete_note', {'note_pk': 1})
+        response = self.client.post(request_url)  # deleting should always use post requests 
+        # expect note with pk=1 to be deleted - try to find it in the database
+        notes = list(Note.objects.filter(pk=1))
+        # expect that the note is gone, so list of results is empty
+        self.assertEqual( [], notes)
+        # todo make sure you redirect to the expected page 
+
+    def test_user_delete_other_note_not_allowed(self):
+        pass 
+        # try and delete note with pk=2 
+
+    def test_delete_note_that_doesnt_exist(self):
+        pass 
+        # delete note with pk=1000000
 
 class TestEmptyViews(TestCase):
 
