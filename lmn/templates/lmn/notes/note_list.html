@@ -10,40 +10,6 @@
 
 {% for note in notes %}
 
-
-  <div id="note_{{ note.pk }}">
-    <h3 class="note-title">{{ note.title }}</h3>
-
-    <p class="show-info">
-      <a href="{% url 'notes_for_show' show_pk=note.show.pk %}">{{ note.show.artist.name }} at {{ note.show.venue.name }} on {{ note.show.show_date }}</a>
-    </p>
-
-    <p class="note-info">Posted on {{ note.posted_date }} by 
-      <a class='user' href="{% url 'user_profile' user_pk=note.user.pk %}">{{ note.user.username }}</a>
-    </p>
-
-    <p class='note-text'>{{ note.text|truncatechars:100 }}</p>
-
-    <p class='note-rating'>Rating: {{ note.star_rating }}</p>
-
-
-    <h3>Photo</h3>
-      {% if note.photo %}
-      <img src="{{ note.photo.url }}" style="width:300px;height:350px;">
-      {% else %}
-      <P>No Photo Uploaded</P>
-      {% endif %}
-
-      {% if messages %}
-        <div class="messages">
-      {% for message in messages %}
-        <p class="{{message.tags}}">{{ message }}</p>
-      {% endfor %}
-        </div>
-      {% endif %}
-
-  </div>  
-
   <hr>
   {% include './_note.html' %}
 
