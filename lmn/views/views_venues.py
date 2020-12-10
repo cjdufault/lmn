@@ -7,6 +7,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 
+from django.core.paginator import Paginator
+
 
 def venue_list(request):
     form = VenueSearchForm()
@@ -16,9 +18,13 @@ def venue_list(request):
         #search for this venue, display results
         venues = Venue.objects.filter(name__icontains=search_name).order_by('name')
     else :
-        venues = Venue.objects.all().order_by('name')   # Todo paginate
+        venues = Venue.objects.all().order_by('name')
+        
+    paginator = Paginator(venues, 25)
+    page_number = request.GET.get('page')
+    page_object = paginator.get_page(page_number)
 
-    return render(request, 'lmn/venues/venue_list.html', { 'venues': venues, 'form': form, 'search_term': search_name })
+    return render(request, 'lmn/venues/venue_list.html', { 'venues': page_object, 'form': form, 'search_term': search_name })
 
 
 def artists_at_venue(request, venue_pk):   # pk = venue_pk
@@ -26,8 +32,12 @@ def artists_at_venue(request, venue_pk):   # pk = venue_pk
 
     shows = Show.objects.filter(venue=venue_pk).order_by('-show_date') 
     venue = Venue.objects.get(pk=venue_pk)
+    
+    paginator = Paginator(shows, 25)
+    page_number = request.GET.get('page')
+    page_object = paginator.get_page(page_number)
 
-    return render(request, 'lmn/artists/artist_list_for_venue.html', { 'venue': venue, 'shows': shows })
+    return render(request, 'lmn/artists/artist_list_for_venue.html', { 'venue': venue, 'shows': page_object })
 
 
 def venue_detail(request, venue_pk):

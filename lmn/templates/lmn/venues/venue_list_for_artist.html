@@ -14,4 +14,20 @@
   <P id="no-results">We have no records of venues this artist has played at<p>
 {% endfor %}
 
+<div>
+  <span>
+    {% if shows.has_previous %}
+      <a href="?page=1">&laquo; First</a>
+      <a href="?page={{ shows.previous_page_number }}">Previous</a>
+    {% endif %}
+  
+    <span>Page {{ shows.number }} of {{ shows.paginator.num_pages }}</span>
+    
+    {% if shows.has_next %}
+      <a href="?page={{ shows.next_page_number }}">Next</a>
+      <a href="?page={{ shows.paginator.num_pages }}">Last &raquo;</a>
+    {% endif %}
+  </span>
+</div>
+
 {% endblock %}
