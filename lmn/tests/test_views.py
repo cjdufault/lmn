@@ -335,7 +335,7 @@ class TestAddNotesWhenUserLoggedIn(TestCase):
 
         new_note_url = reverse('new_note', kwargs={'show_pk':1})
 
-        response = self.client.post(new_note_url, {'text':'ok', 'title':'blah blah', 'rating': 1}, follow=True)
+        response = self.client.post(new_note_url, {'text':'ok', 'title':'blah blah', 'rating': 1, 'photo': ''}, follow=True)
 
         # Verify note is in database
         new_note_query = Note.objects.filter(text='ok', title='blah blah', rating=Note.STAR_RATING[0][0])
