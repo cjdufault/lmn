@@ -9,12 +9,11 @@
     </p>
 
     <h3>Photo</h3>
-    {% if note.photo %}
-        <img src="{{ note.photo.url }}" width="300" height="300">
-    {% else %}
-        <P>No photo uploaded</p>
-    {% endif %}
-
+      {% if note.photo %}
+      <img src="{{ note.photo.url }}" style="width:300px;height:350px;">
+      {% else %}
+      <P>No Photo Uploaded</P>
+      {% endif %}
     {% if long %}
         <p class='note-text'>{{ note.text }}</p>
     {% else %}
