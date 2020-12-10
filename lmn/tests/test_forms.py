@@ -1,10 +1,12 @@
 from django.test import TestCase
 
 from django.contrib.auth.models import User
+from lmn.models import Note
 from lmn.forms import VenueSearchForm, ArtistSearchForm, NoteSearchForm, NewNoteForm, UserRegistrationForm, ProfileForm
 import string
 import shutil
 from PIL import Image 
+from django.urls import reverse
 
 import tempfile
 import filecmp
@@ -154,8 +156,7 @@ class LoginFormTests(TestCase):
 
 
 class TestImageUpload(TestCase):
-
-    fixtures = ['test_users', 'test_places']    
+    fixtures = ['testing_users', 'testing_venues', 'testing_artists', 'testing_shows']
 
     def setUp(self):
         user = User.objects.get(pk=1)
@@ -163,7 +164,7 @@ class TestImageUpload(TestCase):
         self.MEDIA_ROOT = tempfile.mkdtemp()
 
     def tearDown(self):
-        shutil.rmtree(MEDIA_ROOT)
+        shutil.rmtree(self.MEDIA_ROOT)
 
     def create_temp_image_file(self):
         handle, tmp_img_file = tempfile.mkstemp(suffix='.jpg')
@@ -176,9 +177,15 @@ class TestImageUpload(TestCase):
         img_file_path = self.create_temp_image_file()
 
         with self.settings(MEDIA_ROOT=self.MEDIA_ROOT):
-            
             with open(img_file_path, 'rb') as img_file:
-                resp = self.client.post(reverse('new_note', kwargs={'show_pk': 1}), {'photo': img_file}, follow = True )
+                post_data = {
+                    'title': 'note title',
+                    'text': 'note description',
+                    'rating': 1,
+                    'posted_date': '12/17/2020',
+                    'photo': img_file
+                }
+                resp = self.client.post(reverse('new_note', kwargs={'show_pk': 1}), post_data, follow = True )
 
                 self.assertEqual(200, resp.status_code)
 
