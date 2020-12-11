@@ -1,9 +1,15 @@
 body {
-  font-family: monospace;
-  background: #444d4d;
-  color: antiquewhite;
-}
 
+  background-image: url("background_animation.gif"), url("bottomleft.gif"), url("middle.gif"), url("bottomright.gif");
+  background-repeat: repeat-x, no-repeat, no-repeat, no-repeat;
+  background-position: center, left bottom, bottom, right bottom;
+  background-size: 500, 200px, 200px, 200px;
+  position: relative;
+  height: 500px, 100px, 100px, 100px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0
+}
 a {
   color: rgb(70, 193, 197);
 }
@@ -12,6 +18,8 @@ a {
   position: absolute;
   right: 0px;
   padding-right: 10px;
+  color: black;
+  text-shadow: blueviolet
 }
 
 .error {
@@ -34,19 +42,24 @@ button {
   margin: 6px 0px 6 px 0;
 }
 p {
-  font-size: 120%;
-  color: dimgray;
+  font-size: 200%;
+  color: black;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: bolder;
+  text-shadow: 2px, 2px 5px blue;
 }
 p.smallcaps {
   font-variant: small-caps;
 }
 a:link, a:visited, a:hover, a:active {
-  background-color: green;
-  color: white;
-  padding: 10px 25px;
+  color: black;
+  padding: 10px 10px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+
 }
 p.important {
   border-style: solid;
@@ -59,9 +72,9 @@ p.important {
 }
 img {
   margin: auto;
-  padding: 40px 25px;
+  padding: 40px 10px;
   opacity: 0.5;
-  filter: alpha(opacity=50);
+  filter: alpha(opacity=10);
 }
 img.hover {
   opacity: 1.0;
