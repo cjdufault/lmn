@@ -1,3 +1,4 @@
+
 <div id="note_{{ note.pk }}">
     <h2 class="note-title"><a href="/notes/detail/{{ note.pk }}">{{ note.title }}</a></h2>
     <p class="show-info">
@@ -6,6 +7,7 @@
     <p class="note-info">Posted on {{ note.posted_date }} by
         <a class='user' href="{% url 'user_profile' user_pk=note.user.pk %}">{{ note.user.username }}</a>
     </p>
+
     <h3>Photo</h3>
       {% if note.photo %}
       <img src="{{ note.photo.url }}" style="width:300px;height:350px;">
@@ -27,4 +29,3 @@
         {% endfor %}
     </p>
 </div>
-<hr>

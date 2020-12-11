@@ -474,6 +474,19 @@ class TestNotes(TestCase):
         response = self.client.get(reverse('new_note', kwargs={'show_pk': 1}))
         self.assertTemplateUsed(response, 'lmn/notes/new_note.html')
 
+    #tests best_shows template is being used
+    def test_correct_template_used_for_best_shows(self):
+        response = self.client.get(reverse('best_shows'))
+        self.assertTemplateUsed(response, 'lmn/best_shows/best_shows.html')
+
+    #tests notes displayed in best_shows template are organized by top rating
+    def test_best_shows_by_rating(self):
+        response = self.client.get(reverse('best_shows'))
+        context = response.context['notes']
+        first = context[0]
+        self.assertEqual(first.rating, 5)
+
+
 
 class TestUserAuthentication(TestCase):
 

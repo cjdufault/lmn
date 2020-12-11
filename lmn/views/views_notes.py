@@ -56,6 +56,9 @@ def note_detail(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
     return render(request, 'lmn/notes/note_detail.html', { 'note': note })
 
+def best_shows(request):
+    notes = Note.objects.all().order_by('-rating')
+    return render(request, 'lmn/best_shows/best_shows.html', { 'notes': notes })
 
 @login_required
 def user_notes(request):
