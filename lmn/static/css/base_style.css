@@ -1,9 +1,15 @@
 body {
-  font-family: monospace;
-  background: #444d4d;
-  color: antiquewhite;
-}
 
+  background-image: url("background_animation.gif"), url("bottomleft.gif"), url("middle.gif"), url("bottomright.gif");
+  background-repeat: repeat-x, no-repeat, no-repeat, no-repeat;
+  background-position: center, left bottom, bottom, right bottom;
+  background-size: 500, 200px, 200px, 200px;
+  position: relative;
+  height: 500px, 100px, 100px, 100px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0
+}
 a {
   color: rgb(70, 193, 197);
 }
@@ -12,6 +18,8 @@ a {
   position: absolute;
   right: 0px;
   padding-right: 10px;
+  color: black;
+  text-shadow: blueviolet
 }
 
 .error {
@@ -26,3 +34,76 @@ a {
 #pointer {
     cursor: pointer;
 }
+.delete {
+  background-color: rgb(220, 20, 120);
+  border-color: rgb(139, 0, 42);
+}
+button {
+  margin: 6px 0px 6 px 0;
+}
+p {
+<<<<<<< HEAD
+  font-size: 200%;
+  color: black;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: bolder;
+  text-shadow: 2px, 2px 5px blue;
+=======
+  font-size: 120%;
+  color: dimgray;
+>>>>>>> 34971ea103cfcce645d1002a997362c21b19f3e5
+}
+p.smallcaps {
+  font-variant: small-caps;
+}
+a:link, a:visited, a:hover, a:active {
+<<<<<<< HEAD
+  color: black;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+
+=======
+  background-color: green;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+>>>>>>> 34971ea103cfcce645d1002a997362c21b19f3e5
+}
+p.important {
+  border-style: solid;
+  border-width: 5px;
+  border-color: purple;
+}
+.center {
+  display: block;
+  margin: auto;
+}
+img {
+  margin: auto;
+<<<<<<< HEAD
+  padding: 40px 10px;
+  opacity: 0.5;
+  filter: alpha(opacity=10);
+=======
+  padding: 40px 25px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+>>>>>>> 34971ea103cfcce645d1002a997362c21b19f3e5
+}
+img.hover {
+  opacity: 1.0;
+  filter: aplha(opacity=100);
+}
+.centertext {
+  text-align: center;
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> 34971ea103cfcce645d1002a997362c21b19f3e5
