@@ -4,7 +4,9 @@
         "user" : "1",
         "title" : "ok",
         "text" : "kinda ok",
-        "posted_date" : "2017-02-12"
+        "rating" : "5",
+        "posted_date" : "2017-02-12",
+        "photo": ""
       }
     },
 
@@ -12,8 +14,10 @@
       { "show" : "1",
         "user" : "2",
         "title" : "awesome",
+        "rating" : "5",
         "text" : "yay!",
-        "posted_date" : "2017-02-13"
+        "posted_date" : "2017-02-13",
+        "photo": ""
       }
     },
 
@@ -21,8 +25,10 @@
       { "show" : "2",
         "user" : "2",
         "title" : "super",
+        "rating" : "5",
         "text" : "woo hoo!",
-        "posted_date" : "2017-02-14"
+        "posted_date" : "2017-02-14",
+        "photo": ""
       }
     }
 
