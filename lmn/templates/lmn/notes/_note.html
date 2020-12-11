@@ -7,7 +7,7 @@
         <a class='user' href="{% url 'user_profile' user_pk=note.user.pk %}">{{ note.user.username }}</a>
     </p>
     <h3>Photo</h3>
-      {% if note.photo.url %}
+      {% if note.photo %}
       <img src="{{ note.photo.url }}" style="width:300px;height:350px;">
       {% else %}
       <P>No Photo Uploaded</P>
