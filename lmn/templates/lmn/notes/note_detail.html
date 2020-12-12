@@ -17,12 +17,6 @@
 http%3A%2F%2F{{ request.get_host }}%2Fnotes%2Fdetail%2F{{ note.pk }}%2F"
        data-size="small" target="_blank" class="twitter-share-button" data-show-count="false">Tweet</a>
 </p>
-<a onclick="goBack()" id="pointer">Go Back</a>
-<script>
-function goBack() {
-  window.history.back();
-}
-</script>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p id="note-title"><b>{{ note.title}}</b></p>
 <p id="note-text">{{ note.text }}</b>
@@ -50,17 +44,26 @@ function goBack() {
 
 {% else %}
 
-  <form action="{% url 'modify_note' note.pk %}" method="POST">
-    {% csrf_token %}
-    <button type=submit class="modify">Modify Note</button>
-  </form>
- 
+<!-- if you want to go to another page, don't need a form here -->
+<a href="{% url 'modify_note' note.pk %}">
+  <button type=submit class="modify">Modify Note</button>
+</form>
+</a>
+
 {% endif %}
-  
+
+<!-- here you do need a form  -->
 <form action="{% url 'delete_note' note.pk %}" method="POST">
     {% csrf_token %}
-    <button type="submit" class="delete">Delete</button>
+    <button type=submit class="delete">Delete</button>
 </form>
+<a onclick="goBack()" id="pointer">Go Back</a>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
 
 <script src="{% static 'js/confirm_delete.js' %}"></script> <!--added script element to confirm deletion-->
 {% endblock %}

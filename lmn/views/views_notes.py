@@ -71,13 +71,13 @@ def modify_note(request, note_pk):
         form = NewNoteForm(request.POST, request.FILES, instance=note)
         if form.is_valid():
             note = form.save(commit=False)
-            note.user = request.User
+            note.user = request.user
             note.show = show
             note.save()
             return redirect('note_detail', note_pk=note.pk)
-        else:
-            form = NewNoteForm(instance=note)
-        return redirect('note_detail', note_pk=note.pk)
+    else:
+        form = NewNoteForm(instance=note)
+    return render(request, 'lmn/notes/modify_note.html', { 'form': form, 'note': note, 'show': show})
 
 @login_required #check that the user requesting to delete the note is the owner of the selected note
 def delete_note(request, note_pk):
