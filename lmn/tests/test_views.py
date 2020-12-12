@@ -10,8 +10,8 @@ from django.contrib.auth.models import User
 import re, datetime
 from datetime import timezone
 
-# TODO verify correct templates are rendered.class TestDeleteNotes(TestCase):
-
+class TestDeleteNotes(TestCase):
+   # TODO verify correct templates are rendered.
     fixtures = ['testing_artists', 'testing_venues', 'testing_shows', 'testing_users', 'testing_notes']
 
     def setUp(self):
@@ -28,19 +28,18 @@ from datetime import timezone
         # todo make sure you redirect to the expected page 
 
     def test_user_delete_other_note_not_allowed(self):
-<<<<<<< HEAD
+        # try and delete note with pk=2 
         request_url = reverse('delete_note', {'note_pk': 2})
         response = self.client.post(request_url)
         self.assertEqual(403, response.status_code)
         notes = Note.objects.get(pk=2)
-        self.assertIsNotNone([], notes]) 
-        # try and delete note with pk=2 
+        self.assertIsNotNone([], notes)
 
     def test_delete_note_that_doesnt_exist(self):
+        # delete note with pk=1000000
         request_url = reverse('delete_note', {'note_pk': 1000000})
         response = self.client.post(request_url)
         self.assertEqual(403, response.status_code)
-        # delete note with pk=1000000
     
     def test_modify_notes(self):
     
@@ -66,8 +65,8 @@ from datetime import timezone
         self.assertTemplateUsed(response, 'lmn/notes_detail.html')
         # and correct data shown on page?
         self.assertContains(response, 'boo')  # new text shown
-        def test_add_date_visited(self):
-    
+
+    def test_add_date_visited(self):
         date_listed = '2014-01-01'
         response = self.client.post(reverse('note_details', kwargs={'note_pk':4}), {'date_listed': date_listed}, follow=True)
         updated_note_4 = Note.objects.get(pk=4)
@@ -79,17 +78,6 @@ from datetime import timezone
         self.assertTemplateUsed(response, 'lmn/note_detail.html')
         # and correct data shown on page?
         self.assertContains(response, date_listed)  # new text shown
-       
-
-
-=======
-        pass 
-        # try and delete note with pk=2 
-
-    def test_delete_note_that_doesnt_exist(self):
-        pass 
-        # delete note with pk=1000000
->>>>>>> 34971ea103cfcce645d1002a997362c21b19f3e5
 
 class TestEmptyViews(TestCase):
 

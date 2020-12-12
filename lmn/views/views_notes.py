@@ -8,11 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseForbidden
 from django.contrib import messages
-<<<<<<< HEAD
-=======
 from django.core.paginator import Paginator
->>>>>>> 34971ea103cfcce645d1002a997362c21b19f3e5
-
 
 @login_required
 def new_note(request, show_pk):
@@ -55,10 +51,6 @@ def notes_for_show(request, show_pk):
     
     return render(request, 'lmn/notes/note_list.html', { 'show': show, 'notes': page_object })
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 34971ea103cfcce645d1002a997362c21b19f3e5
 # note_detail route checks to make sure the user who owns this not is editing it
 def note_detail(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
