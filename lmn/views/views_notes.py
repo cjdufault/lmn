@@ -98,6 +98,10 @@ def delete_note(request, note_pk):
     else:
         return HttpResponseForbidden() 
 
+def best_shows(request):
+    notes = Note.objects.all().order_by('-rating')
+    return render(request, 'lmn/best_shows/best_shows.html', { 'notes': notes })
+
 @login_required
 def user_notes(request):
     form = NoteSearchForm()
