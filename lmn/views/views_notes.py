@@ -8,11 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseForbidden
 from django.contrib import messages
-<<<<<<< HEAD
-=======
 from django.core.paginator import Paginator
->>>>>>> 34971ea103cfcce645d1002a997362c21b19f3e5
-
 
 @login_required
 def new_note(request, show_pk):
@@ -55,30 +51,11 @@ def notes_for_show(request, show_pk):
     
     return render(request, 'lmn/notes/note_list.html', { 'show': show, 'notes': page_object })
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 34971ea103cfcce645d1002a997362c21b19f3e5
-# note_detail route checks to make sure the user who owns this not is editing it
+# display note details
 def note_detail(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
-    # at the start of view function needs to have the note.user be equal to request.user
-    if note.user != request.user:
-        return HttpResponseForbidden()
-    if request.method == 'POST':
-        form = NewNoteForm(request.POST, request.FILES, instance=note) # instance = model object to update with the form data
-        if form.is_valid():
-            form.save()
-            messages.info(request, 'User notes updated!')
-        else:
-            messages.error(request, form.errors) # Temp error message - future version should improve
-        return redirect('note_details', note_pk=note_pk)
-    else: #GET note details
-        if latest_notes:
-            review_form = NewNoteForm(instance=note)
-            return render(request, 'lmn/notes/note_detail.html', {'note': note, 'review_form': review_form})
-        else:
-            return render(request, 'lmn/notes/note_detail.html', { 'note': note })
+    return render(request, 'lmn/notes/note_detail.html', { 'note': note })
+
 @login_required
 def modify_note(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
@@ -105,6 +82,10 @@ def delete_note(request, note_pk):
         return redirect('latest_notes')
     else:
         return HttpResponseForbidden() 
+
+def best_shows(request):
+    notes = Note.objects.all().order_by('-rating')
+    return render(request, 'lmn/best_shows/best_shows.html', { 'notes': notes })
 
 @login_required
 def user_notes(request):

@@ -42,7 +42,6 @@ button {
   margin: 6px 0px 6 px 0;
 }
 p {
-<<<<<<< HEAD
   font-size: 200%;
   color: black;
   padding: 10px 30px;
@@ -51,29 +50,19 @@ p {
   font-style: italic;
   font-weight: bolder;
   text-shadow: 2px, 2px 5px blue;
-=======
   font-size: 120%;
   color: dimgray;
->>>>>>> 34971ea103cfcce645d1002a997362c21b19f3e5
 }
 p.smallcaps {
   font-variant: small-caps;
 }
 a:link, a:visited, a:hover, a:active {
-<<<<<<< HEAD
   color: black;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-
-=======
   background-color: green;
-  color: white;
   padding: 10px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
->>>>>>> 34971ea103cfcce645d1002a997362c21b19f3e5
 }
 p.important {
   border-style: solid;
@@ -86,15 +75,9 @@ p.important {
 }
 img {
   margin: auto;
-<<<<<<< HEAD
-  padding: 40px 10px;
-  opacity: 0.5;
-  filter: alpha(opacity=10);
-=======
   padding: 40px 25px;
   opacity: 0.5;
   filter: alpha(opacity=50);
->>>>>>> 34971ea103cfcce645d1002a997362c21b19f3e5
 }
 img.hover {
   opacity: 1.0;
@@ -102,8 +85,4 @@ img.hover {
 }
 .centertext {
   text-align: center;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 34971ea103cfcce645d1002a997362c21b19f3e5

@@ -1,0 +1,16 @@
+{% extends 'lmn/base.html' %}
+
+{% block content %}
+
+{% if show %}
+  <h2 id="show-title">Notes for {{ show.artist.name }} at {{ show.venue.name }} on {{ show.show_date }}</h2>
+{% else %}
+  <h2>Best Shows</h2>
+{% endif %}
+
+{% for note in notes %}
+  {% include 'lmn/notes/_note.html' %}
+  {% empty %}
+  <p>No notes.</p>
+{% endfor %}
+{% endblock %}

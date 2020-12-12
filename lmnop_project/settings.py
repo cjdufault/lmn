@@ -95,6 +95,18 @@ if os.getenv('GAE_INSTANCE'):
             'PORT': 5432
         },
     }
+elif os.getenv('UPDATE_DB'): # set this env var while cloud_sql_proxy is running to update db config
+    DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': 'lmnop_db',
+                'USER': 'application',
+                'PASSWORD': os.environ['POSTGRE_PW'],
+                'HOST': '127.0.0.1',
+                'PORT': 5432
+            },
+        }
+            
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
