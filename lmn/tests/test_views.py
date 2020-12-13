@@ -30,7 +30,7 @@ class TestDeleteNotes(TestCase):
         response = self.client.post(request_url)
         self.assertEqual(404, response.status_code)
         notes = Note.objects.get(pk=2)
-        self.assertIsNotNone([], notes) 
+        self.assertIsNotNone(notes) 
         # try and delete note with pk=2 
 
     def test_delete_note_that_doesnt_exist(self):
