@@ -56,7 +56,7 @@ def get_venue(request):
             try:
                 venue_name = result['name']
                 venue_city = result['city']['name']
-                venue_state = result['state']['name']
+                venue_state = result['state']['stateCode']
                 Venue(name=venue_name, city=venue_city, state=venue_state).save()
             except IntegrityError as e:
                 logging.error(f'Error: {e}')
