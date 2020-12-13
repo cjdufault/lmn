@@ -1,4 +1,6 @@
 {% extends 'lmn/base.html' %}
+{% load static %}
+<!--added javaScript code to note_detail.html that loads static files-->
 {% block content %}
 
 <h2 id="note-page-title">{{ note.show.artist.name }} at {{ note.show.venue.name }} by 
@@ -17,11 +19,54 @@
 http%3A%2F%2F{{ request.get_host }}%2Fnotes%2Fdetail%2F{{ note.pk }}%2F"
        data-size="small" target="_blank" class="twitter-share-button" data-show-count="false">Tweet</a>
 </p>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p id="note-title"><b>{{ note.title}}</b></p>
+<p id="note-text">{{ note.text }}</b>
+{% if note.name %}
+    <p>You have listed {{ note.title }}</p>
+    <h3>Notes</h3>
+    <P>{{ note.name|default:"No Notes" }}</P>
+    <h3>Date Listed</h3>
+    <p>{{ note.posted_date|default:"Date listed not set" }}</p>
+    <h3>Photo</h3>
+    <!-- Messages, updates, errors from form-->
+    {% if messages %}
+    <div class="messages">
+        {% for message in messsages %}
+            [{ message }]
+        {% endfor %}
+        </div>
+    {% endif %}
+    <form action="{% url 'note_details' note.pk %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ review_form.as_p }}
+        <button type="submit">Save review</button>
+    </form>
+
+
+{% else %}
+
+<!-- if you want to go to another page, don't need a form here -->
+<a href="{% url 'modify_note' note.pk %}">
+  <button type=submit class="modify">Modify Note</button>
+</form>
+</a>
+
+{% endif %}
+
+<!-- here you do need a form  -->
+<form action="{% url 'delete_note' note.pk %}" method="POST">
+    {% csrf_token %}
+    <button type=submit class="delete">Delete</button>
+</form>
 <a onclick="goBack()" id="pointer">Go Back</a>
 <script>
 function goBack() {
   window.history.back();
 }
 </script>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<script src="{% static 'js/confirm_delete.js' %}"></script> <!--added script element to confirm deletion-->
 {% endblock %}
+

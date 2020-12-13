@@ -1,9 +1,12 @@
 body {
-  font-family: monospace;
-  background: #444d4d;
-  color: antiquewhite;
-}
 
+  background-image: url("background_animation.gif"), url("bottom.gif");
+  background-repeat: repeat-x;
+  background-position: top, left bottom, right bottom;
+  background-size: 500, 200px, 200px;
+  position: relative;
+  background-attachment: fixed;
+}
 a {
   color: rgb(70, 193, 197);
 }
@@ -12,6 +15,8 @@ a {
   position: absolute;
   right: 0px;
   padding-right: 10px;
+  color: black;
+  text-shadow: blueviolet
 }
 
 .error {
@@ -26,3 +31,52 @@ a {
 #pointer {
     cursor: pointer;
 }
+.delete {
+  background-color: rgb(220, 20, 120);
+  border-color: rgb(139, 0, 42);
+}
+button {
+  margin: 6px 0px 6 px 0;
+}
+p {
+  font-size: 200%;
+  color: black;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: bolder;
+  text-shadow: 2px, 2px 5px blue;
+}
+p.smallcaps {
+  font-variant: small-caps;
+}
+a:link, a:visited, a:hover, a:active {
+  color: black;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+
+}
+p.important {
+  border-style: solid;
+  border-width: 5px;
+  border-color: purple;
+}
+.center {
+  display: block;
+  margin: auto;
+}
+img {
+  margin: auto;
+  padding: 40px 10px;
+  opacity: 0.5;
+  filter: alpha(opacity=10);
+  height: 20pxpx;
+}
+img.hover {
+  opacity: 1.0;
+  filter: aplha(opacity=100);
+}
+.centertext {
+  text-align: center;

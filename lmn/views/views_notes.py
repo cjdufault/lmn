@@ -2,11 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from ..models import Venue, Artist, Note, Show
 from ..forms import VenueSearchForm, NewNoteForm, NoteSearchForm, UserRegistrationForm
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-
+from django.http import HttpResponseForbidden
+from django.contrib import messages
 from django.core.paginator import Paginator
 
 
@@ -55,6 +55,32 @@ def notes_for_show(request, show_pk):
 def note_detail(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
     return render(request, 'lmn/notes/note_detail.html', { 'note': note })
+    @login_required
+def modify_note(request, note_pk):
+    note = get_object_or_404(Note, pk=note_pk)
+    show = get_object_or_404(Show, pk=note.show_id)
+    if note.user != request.user:
+        return HttpResponseForbidden()
+    if request.method == 'POST' :
+        form = NewNoteForm(request.POST, request.FILES, instance=note)
+        if form.is_valid():
+            note = form.save(commit=False)
+            note.user = request.User
+            note.show = show
+            note.save()
+            return redirect('note_detail', note_pk=note.pk)
+        else:
+            form = NewNoteForm(instance=note)
+        return redirect('note_detail', note_pk=note.pk)
+
+@login_required #check that the user requesting to delete the note is the owner of the selected note
+def delete_note(request, note_pk):
+    note = get_object_or_404(Note, pk=note_pk)
+    if note.user == request.user:
+        note.delete()
+        return redirect('latest_notes')
+    else:
+        return HttpResponseForbidden() 
 
 def best_shows(request):
     notes = Note.objects.all().order_by('-rating')
