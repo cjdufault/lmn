@@ -47,11 +47,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="lmn.migrations.html">lmn.migrations package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="lmn.migrations.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lmn.migrations.html#lmn-migrations-0001-initial-module">lmn.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lmn.migrations.html#module-lmn.migrations.0001_initial">lmn.migrations.0001_initial module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lmn.migrations.html#module-lmn.migrations.0002_auto_20201128_2308">lmn.migrations.0002_auto_20201128_2308 module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lmn.migrations.html#module-lmn.migrations.0002_note_photo">lmn.migrations.0002_note_photo module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lmn.migrations.html#module-lmn.migrations.0002_note_rating">lmn.migrations.0002_note_rating module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lmn.migrations.html#lmn-migrations-0002-profile-module">lmn.migrations.0002_profile module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lmn.migrations.html#module-lmn.migrations.0002_profile">lmn.migrations.0002_profile module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lmn.migrations.html#module-lmn.migrations.0003_auto_20201127_1708">lmn.migrations.0003_auto_20201127_1708 module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lmn.migrations.html#module-lmn.migrations.0003_merge_20201129_2127">lmn.migrations.0003_merge_20201129_2127 module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lmn.migrations.html#module-lmn.migrations.0004_merge_20201127_1731">lmn.migrations.0004_merge_20201127_1731 module</a></li>
@@ -65,10 +65,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="lmn.tests.html">lmn.tests package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="lmn.tests.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lmn.tests.html#lmn-tests-test-api-module">lmn.tests.test_api module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lmn.tests.html#lmn-tests-test-forms-module">lmn.tests.test_forms module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lmn.tests.html#lmn-tests-test-models-module">lmn.tests.test_models module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lmn.tests.html#lmn-tests-test-views-module">lmn.tests.test_views module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lmn.tests.html#module-lmn.tests.test_api">lmn.tests.test_api module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lmn.tests.html#module-lmn.tests.test_forms">lmn.tests.test_forms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lmn.tests.html#module-lmn.tests.test_models">lmn.tests.test_models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lmn.tests.html#module-lmn.tests.test_views">lmn.tests.test_views module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lmn.tests.html#module-lmn.tests">Module contents</a></li>
 </ul>
 </li>
@@ -78,11 +78,36 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="lmn-admin-module">
-<h2>lmn.admin module<a class="headerlink" href="#lmn-admin-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-lmn.admin">
+<span id="lmn-admin-module"></span><h2>lmn.admin module<a class="headerlink" href="#module-lmn.admin" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="lmn-api-views-module">
-<h2>lmn.api_views module<a class="headerlink" href="#lmn-api-views-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-lmn.api_views">
+<span id="lmn-api-views-module"></span><h2>lmn.api_views module<a class="headerlink" href="#module-lmn.api_views" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="lmn.api_views.get_artist">
+<code class="sig-prename descclassname">lmn.api_views.</code><code class="sig-name descname">get_artist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.api_views.get_artist" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is called by the /artist endpoint and populates the db with artist information</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="lmn.api_views.get_events">
+<code class="sig-prename descclassname">lmn.api_views.</code><code class="sig-name descname">get_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.api_views.get_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function calls the ticketmaster api and returns event data for area 336
+:return: The Ticketmaster API response as a <cite>JSON</cite></p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="lmn.api_views.get_show">
+<code class="sig-prename descclassname">lmn.api_views.</code><code class="sig-name descname">get_show</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.api_views.get_show" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is called by the /show endpoint and populates the db with show information</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="lmn.api_views.get_venue">
+<code class="sig-prename descclassname">lmn.api_views.</code><code class="sig-name descname">get_venue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.api_views.get_venue" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is called by the /venue endpoint and populates the db with venue information</p>
+</dd></dl>
+
 </div>
 <div class="section" id="module-lmn.apps">
 <span id="lmn-apps-module"></span><h2>lmn.apps module<a class="headerlink" href="#module-lmn.apps" title="Permalink to this headline">¶</a></h2>
@@ -98,14 +123,647 @@
 </dd></dl>
 
 </div>
-<div class="section" id="lmn-forms-module">
-<h2>lmn.forms module<a class="headerlink" href="#lmn-forms-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-lmn.forms">
+<span id="lmn-forms-module"></span><h2>lmn.forms module<a class="headerlink" href="#module-lmn.forms" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lmn.forms.ArtistSearchForm">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.forms.</code><code class="sig-name descname">ArtistSearchForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">field_order=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.ArtistSearchForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.forms.Form</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.forms.ArtistSearchForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'search_name': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#lmn.forms.ArtistSearchForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.forms.ArtistSearchForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {'search_name': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#lmn.forms.ArtistSearchForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.forms.ArtistSearchForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#lmn.forms.ArtistSearchForm.media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.forms.DateInput">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.forms.</code><code class="sig-name descname">DateInput</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attrs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">format</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.DateInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.widgets.DateInput</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.forms.DateInput.input_type">
+<code class="sig-name descname">input_type</code><em class="property"> = 'date'</em><a class="headerlink" href="#lmn.forms.DateInput.input_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.forms.DateInput.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#lmn.forms.DateInput.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.forms.NewNoteForm">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.forms.</code><code class="sig-name descname">NewNoteForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">instance=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.NewNoteForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.models.ModelForm</span></code></p>
+<dl class="py class">
+<dt id="lmn.forms.NewNoteForm.Meta">
+<em class="property">class </em><code class="sig-name descname">Meta</code><a class="headerlink" href="#lmn.forms.NewNoteForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.forms.NewNoteForm.Meta.fields">
+<code class="sig-name descname">fields</code><em class="property"> = ('title', 'text', 'rating', 'posted_date', 'photo')</em><a class="headerlink" href="#lmn.forms.NewNoteForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.forms.NewNoteForm.Meta.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#lmn.forms.NewNoteForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#lmn.models.Note" title="lmn.models.Note"><code class="xref py py-class docutils literal notranslate"><span class="pre">lmn.models.Note</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.forms.NewNoteForm.Meta.widgets">
+<code class="sig-name descname">widgets</code><em class="property"> = {'posted_date': &lt;lmn.forms.DateInput object&gt;}</em><a class="headerlink" href="#lmn.forms.NewNoteForm.Meta.widgets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.forms.NewNoteForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'photo': &lt;django.forms.fields.ImageField object&gt;, 'posted_date': &lt;django.forms.fields.DateField object&gt;, 'rating': &lt;django.forms.fields.TypedChoiceField object&gt;, 'text': &lt;django.forms.fields.CharField object&gt;, 'title': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#lmn.forms.NewNoteForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.forms.NewNoteForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {}</em><a class="headerlink" href="#lmn.forms.NewNoteForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.forms.NewNoteForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#lmn.forms.NewNoteForm.media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.forms.NoteSearchForm">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.forms.</code><code class="sig-name descname">NoteSearchForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">field_order=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.NoteSearchForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.forms.Form</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.forms.NoteSearchForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'search_name': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#lmn.forms.NoteSearchForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.forms.NoteSearchForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {'search_name': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#lmn.forms.NoteSearchForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.forms.NoteSearchForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#lmn.forms.NoteSearchForm.media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.forms.ProfileForm">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.forms.</code><code class="sig-name descname">ProfileForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">instance=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.ProfileForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.models.ModelForm</span></code></p>
+<dl class="py class">
+<dt id="lmn.forms.ProfileForm.Meta">
+<em class="property">class </em><code class="sig-name descname">Meta</code><a class="headerlink" href="#lmn.forms.ProfileForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.forms.ProfileForm.Meta.fields">
+<code class="sig-name descname">fields</code><em class="property"> = ('bio',)</em><a class="headerlink" href="#lmn.forms.ProfileForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.forms.ProfileForm.Meta.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#lmn.forms.ProfileForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#lmn.models.Profile" title="lmn.models.Profile"><code class="xref py py-class docutils literal notranslate"><span class="pre">lmn.models.Profile</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.forms.ProfileForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'bio': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#lmn.forms.ProfileForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.forms.ProfileForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {}</em><a class="headerlink" href="#lmn.forms.ProfileForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.forms.ProfileForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#lmn.forms.ProfileForm.media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.forms.UserRegistrationForm">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.forms.</code><code class="sig-name descname">UserRegistrationForm</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.UserRegistrationForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.forms.UserCreationForm</span></code></p>
+<dl class="py class">
+<dt id="lmn.forms.UserRegistrationForm.Meta">
+<em class="property">class </em><code class="sig-name descname">Meta</code><a class="headerlink" href="#lmn.forms.UserRegistrationForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.forms.UserRegistrationForm.Meta.fields">
+<code class="sig-name descname">fields</code><em class="property"> = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')</em><a class="headerlink" href="#lmn.forms.UserRegistrationForm.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.forms.UserRegistrationForm.Meta.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#lmn.forms.UserRegistrationForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.models.User</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.forms.UserRegistrationForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'email': &lt;django.forms.fields.EmailField object&gt;, 'first_name': &lt;django.forms.fields.CharField object&gt;, 'last_name': &lt;django.forms.fields.CharField object&gt;, 'password1': &lt;django.forms.fields.CharField object&gt;, 'password2': &lt;django.forms.fields.CharField object&gt;, 'username': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#lmn.forms.UserRegistrationForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.forms.UserRegistrationForm.clean_email">
+<code class="sig-name descname">clean_email</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.UserRegistrationForm.clean_email" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.forms.UserRegistrationForm.clean_first_name">
+<code class="sig-name descname">clean_first_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.UserRegistrationForm.clean_first_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.forms.UserRegistrationForm.clean_last_name">
+<code class="sig-name descname">clean_last_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.UserRegistrationForm.clean_last_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.forms.UserRegistrationForm.clean_username">
+<code class="sig-name descname">clean_username</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.UserRegistrationForm.clean_username" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.forms.UserRegistrationForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {'password1': &lt;django.forms.fields.CharField object&gt;, 'password2': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#lmn.forms.UserRegistrationForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.forms.UserRegistrationForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#lmn.forms.UserRegistrationForm.media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.forms.UserRegistrationForm.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">commit</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.UserRegistrationForm.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save this form’s self.instance object if commit=True. Otherwise, add
+a save_m2m() method to the form which can be called after the instance
+is saved manually at a later time. Return the model instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.forms.VenueSearchForm">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.forms.</code><code class="sig-name descname">VenueSearchForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">field_order=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.VenueSearchForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.forms.Form</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.forms.VenueSearchForm.base_fields">
+<code class="sig-name descname">base_fields</code><em class="property"> = {'search_name': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#lmn.forms.VenueSearchForm.base_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.forms.VenueSearchForm.declared_fields">
+<code class="sig-name descname">declared_fields</code><em class="property"> = {'search_name': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#lmn.forms.VenueSearchForm.declared_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.forms.VenueSearchForm.media">
+<em class="property">property </em><code class="sig-name descname">media</code><a class="headerlink" href="#lmn.forms.VenueSearchForm.media" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="lmn-models-module">
-<h2>lmn.models module<a class="headerlink" href="#lmn-models-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-lmn.models">
+<span id="lmn-models-module"></span><h2>lmn.models module<a class="headerlink" href="#module-lmn.models" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lmn.models.Artist">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Artist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Artist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt id="lmn.models.Artist.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#lmn.models.Artist.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="lmn.models.Artist.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#lmn.models.Artist.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Artist.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#lmn.models.Artist.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Artist.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#lmn.models.Artist.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Artist.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#lmn.models.Artist.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Artist.show_set">
+<code class="sig-name descname">show_set</code><a class="headerlink" href="#lmn.models.Artist.show_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="lmn-urls-module">
-<h2>lmn.urls module<a class="headerlink" href="#lmn-urls-module" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.models.Note">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Note</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">show</span></em>, <em class="sig-param"><span class="n">user</span></em>, <em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">rating</span></em>, <em class="sig-param"><span class="n">posted_date</span></em>, <em class="sig-param"><span class="n">photo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Note" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt id="lmn.models.Note.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#lmn.models.Note.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="lmn.models.Note.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#lmn.models.Note.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Note.STAR_RATING">
+<code class="sig-name descname">STAR_RATING</code><em class="property"> = ((1, '★'), (2, '★★'), (3, '★★★'), (4, '★★★★'), (5, '★★★★★'))</em><a class="headerlink" href="#lmn.models.Note.STAR_RATING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.models.Note.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Note.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.models.Note.delete_photo">
+<code class="sig-name descname">delete_photo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">photo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Note.delete_photo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.models.Note.get_rating_display">
+<code class="sig-name descname">get_rating_display</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">field=&lt;django.db.models.fields.IntegerField: rating&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Note.get_rating_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Note.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#lmn.models.Note.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Note.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#lmn.models.Note.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Note.photo">
+<code class="sig-name descname">photo</code><a class="headerlink" href="#lmn.models.Note.photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Just like the FileDescriptor, but for ImageFields. The only difference is
+assigning the width/height to the width_field/height_field, if appropriate.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Note.posted_date">
+<code class="sig-name descname">posted_date</code><a class="headerlink" href="#lmn.models.Note.posted_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Note.rating">
+<code class="sig-name descname">rating</code><a class="headerlink" href="#lmn.models.Note.rating" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.models.Note.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Note.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The ‘force_insert’ and ‘force_update’ parameters can be used to insist
+that the “save” must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Note.show">
+<code class="sig-name descname">show</code><a class="headerlink" href="#lmn.models.Note.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Note.show_id">
+<code class="sig-name descname">show_id</code><a class="headerlink" href="#lmn.models.Note.show_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Note.text">
+<code class="sig-name descname">text</code><a class="headerlink" href="#lmn.models.Note.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Note.title">
+<code class="sig-name descname">title</code><a class="headerlink" href="#lmn.models.Note.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Note.user">
+<code class="sig-name descname">user</code><a class="headerlink" href="#lmn.models.Note.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Note.user_id">
+<code class="sig-name descname">user_id</code><a class="headerlink" href="#lmn.models.Note.user_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.models.Profile">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Profile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">bio</span></em>, <em class="sig-param"><span class="n">user</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt id="lmn.models.Profile.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#lmn.models.Profile.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="lmn.models.Profile.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#lmn.models.Profile.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Profile.bio">
+<code class="sig-name descname">bio</code><a class="headerlink" href="#lmn.models.Profile.bio" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Profile.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#lmn.models.Profile.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Profile.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#lmn.models.Profile.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Profile.user">
+<code class="sig-name descname">user</code><a class="headerlink" href="#lmn.models.Profile.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a one-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Restaurant.place</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Profile.user_id">
+<code class="sig-name descname">user_id</code><a class="headerlink" href="#lmn.models.Profile.user_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.models.Show">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Show</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">show_date</span></em>, <em class="sig-param"><span class="n">artist</span></em>, <em class="sig-param"><span class="n">venue</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt id="lmn.models.Show.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#lmn.models.Show.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="lmn.models.Show.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#lmn.models.Show.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Show.artist">
+<code class="sig-name descname">artist</code><a class="headerlink" href="#lmn.models.Show.artist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Show.artist_id">
+<code class="sig-name descname">artist_id</code><a class="headerlink" href="#lmn.models.Show.artist_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.models.Show.get_next_by_show_date">
+<code class="sig-name descname">get_next_by_show_date</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">field=&lt;django.db.models.fields.DateTimeField: show_date&gt;</em>, <em class="sig-param">is_next=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Show.get_next_by_show_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.models.Show.get_previous_by_show_date">
+<code class="sig-name descname">get_previous_by_show_date</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">field=&lt;django.db.models.fields.DateTimeField: show_date&gt;</em>, <em class="sig-param">is_next=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Show.get_previous_by_show_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Show.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#lmn.models.Show.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Show.note_set">
+<code class="sig-name descname">note_set</code><a class="headerlink" href="#lmn.models.Show.note_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Show.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#lmn.models.Show.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Show.show_date">
+<code class="sig-name descname">show_date</code><a class="headerlink" href="#lmn.models.Show.show_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Show.venue">
+<code class="sig-name descname">venue</code><a class="headerlink" href="#lmn.models.Show.venue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Show.venue_id">
+<code class="sig-name descname">venue_id</code><a class="headerlink" href="#lmn.models.Show.venue_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.models.Venue">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Venue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">city</span></em>, <em class="sig-param"><span class="n">state</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Venue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="py exception">
+<dt id="lmn.models.Venue.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#lmn.models.Venue.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="lmn.models.Venue.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#lmn.models.Venue.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Venue.city">
+<code class="sig-name descname">city</code><a class="headerlink" href="#lmn.models.Venue.city" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Venue.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#lmn.models.Venue.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Venue.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#lmn.models.Venue.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Venue.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#lmn.models.Venue.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Venue.show_set">
+<code class="sig-name descname">show_set</code><a class="headerlink" href="#lmn.models.Venue.show_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.models.Venue.state">
+<code class="sig-name descname">state</code><a class="headerlink" href="#lmn.models.Venue.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lmn.urls">
+<span id="lmn-urls-module"></span><h2>lmn.urls module<a class="headerlink" href="#module-lmn.urls" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-lmn">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-lmn" title="Permalink to this headline">¶</a></h2>

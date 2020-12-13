@@ -37,17 +37,594 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="lmn-tests-test-api-module">
-<h2>lmn.tests.test_api module<a class="headerlink" href="#lmn-tests-test-api-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-lmn.tests.test_api">
+<span id="lmn-tests-test-api-module"></span><h2>lmn.tests.test_api module<a class="headerlink" href="#module-lmn.tests.test_api" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lmn.tests.test_api.ApiTests">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_api.</code><code class="sig-name descname">ApiTests</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_api.ApiTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="lmn.tests.test_api.ApiTests.test_artist_server_error_500">
+<code class="sig-name descname">test_artist_server_error_500</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">requests_mock</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_api.ApiTests.test_artist_server_error_500" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_api.ApiTests.test_show_server_error_500">
+<code class="sig-name descname">test_show_server_error_500</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">requests_mock</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_api.ApiTests.test_show_server_error_500" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_api.ApiTests.test_venue_server_error_500">
+<code class="sig-name descname">test_venue_server_error_500</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">requests_mock</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_api.ApiTests.test_venue_server_error_500" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="lmn-tests-test-forms-module">
-<h2>lmn.tests.test_forms module<a class="headerlink" href="#lmn-tests-test-forms-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-lmn.tests.test_forms">
+<span id="lmn-tests-test-forms-module"></span><h2>lmn.tests.test_forms module<a class="headerlink" href="#module-lmn.tests.test_forms" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lmn.tests.test_forms.LoginFormTests">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_forms.</code><code class="sig-name descname">LoginFormTests</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.LoginFormTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_forms.NewNoteFormTests">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_forms.</code><code class="sig-name descname">NewNoteFormTests</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.NewNoteFormTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="lmn.tests.test_forms.NewNoteFormTests.test_missing_text_is_invalid">
+<code class="sig-name descname">test_missing_text_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.NewNoteFormTests.test_missing_text_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.NewNoteFormTests.test_missing_title_is_invalid">
+<code class="sig-name descname">test_missing_title_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.NewNoteFormTests.test_missing_title_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.NewNoteFormTests.test_ok_title_length_and_rating_is_valid">
+<code class="sig-name descname">test_ok_title_length_and_rating_is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.NewNoteFormTests.test_ok_title_length_and_rating_is_valid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.NewNoteFormTests.test_rating_greater_than_five_is_invalid">
+<code class="sig-name descname">test_rating_greater_than_five_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.NewNoteFormTests.test_rating_greater_than_five_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.NewNoteFormTests.test_rating_less_than_zero_is_invalid">
+<code class="sig-name descname">test_rating_less_than_zero_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.NewNoteFormTests.test_rating_less_than_zero_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.NewNoteFormTests.test_text_too_long_is_invalid">
+<code class="sig-name descname">test_text_too_long_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.NewNoteFormTests.test_text_too_long_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.NewNoteFormTests.test_title_too_long_is_invalid">
+<code class="sig-name descname">test_title_too_long_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.NewNoteFormTests.test_title_too_long_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_forms.ProfileFormTests">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_forms.</code><code class="sig-name descname">ProfileFormTests</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.ProfileFormTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="lmn.tests.test_forms.ProfileFormTests.test_empty_is_invalid">
+<code class="sig-name descname">test_empty_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.ProfileFormTests.test_empty_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.ProfileFormTests.test_more_than_500_characters_is_invalid">
+<code class="sig-name descname">test_more_than_500_characters_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.ProfileFormTests.test_more_than_500_characters_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_forms.RegistrationFormTests">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_forms.</code><code class="sig-name descname">RegistrationFormTests</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.RegistrationFormTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_email_already_in_db_case_insensitive_fails">
+<code class="sig-name descname">test_register_user_with_email_already_in_db_case_insensitive_fails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_email_already_in_db_case_insensitive_fails" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_email_already_in_db_fails">
+<code class="sig-name descname">test_register_user_with_email_already_in_db_fails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_email_already_in_db_fails" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_missing_data_fails">
+<code class="sig-name descname">test_register_user_with_missing_data_fails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_missing_data_fails" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_password_mismatch_fails">
+<code class="sig-name descname">test_register_user_with_password_mismatch_fails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_password_mismatch_fails" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_username_already_in_db_case_insensitive_fails">
+<code class="sig-name descname">test_register_user_with_username_already_in_db_case_insensitive_fails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_username_already_in_db_case_insensitive_fails" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_username_already_in_db_fails">
+<code class="sig-name descname">test_register_user_with_username_already_in_db_fails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_username_already_in_db_fails" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_valid_data_is_valid">
+<code class="sig-name descname">test_register_user_with_valid_data_is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.RegistrationFormTests.test_register_user_with_valid_data_is_valid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_forms.SearchFormTests">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_forms.</code><code class="sig-name descname">SearchFormTests</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.SearchFormTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="lmn.tests.test_forms.SearchFormTests.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.SearchFormTests.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.SearchFormTests.test_artist_search_is_valid">
+<code class="sig-name descname">test_artist_search_is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.SearchFormTests.test_artist_search_is_valid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.SearchFormTests.test_long_artist_search_is_invalid">
+<code class="sig-name descname">test_long_artist_search_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.SearchFormTests.test_long_artist_search_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.SearchFormTests.test_long_note_search_is_invalid">
+<code class="sig-name descname">test_long_note_search_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.SearchFormTests.test_long_note_search_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.SearchFormTests.test_long_venue_search_is_invalid">
+<code class="sig-name descname">test_long_venue_search_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.SearchFormTests.test_long_venue_search_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.SearchFormTests.test_missing_artist_search_is_invalid">
+<code class="sig-name descname">test_missing_artist_search_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.SearchFormTests.test_missing_artist_search_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.SearchFormTests.test_missing_note_search_is_invalid">
+<code class="sig-name descname">test_missing_note_search_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.SearchFormTests.test_missing_note_search_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.SearchFormTests.test_missing_venue_search_is_invalid">
+<code class="sig-name descname">test_missing_venue_search_is_invalid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.SearchFormTests.test_missing_venue_search_is_invalid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.SearchFormTests.test_note_search_is_valid">
+<code class="sig-name descname">test_note_search_is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.SearchFormTests.test_note_search_is_valid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.SearchFormTests.test_venue_search_is_valid">
+<code class="sig-name descname">test_venue_search_is_valid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.SearchFormTests.test_venue_search_is_valid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_forms.TestImageUpload">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_forms.</code><code class="sig-name descname">TestImageUpload</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.TestImageUpload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="lmn.tests.test_forms.TestImageUpload.create_temp_image_file">
+<code class="sig-name descname">create_temp_image_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.TestImageUpload.create_temp_image_file" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="lmn.tests.test_forms.TestImageUpload.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['testing_users', 'testing_venues', 'testing_artists', 'testing_shows']</em><a class="headerlink" href="#lmn.tests.test_forms.TestImageUpload.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.TestImageUpload.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.TestImageUpload.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.TestImageUpload.tearDown">
+<code class="sig-name descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.TestImageUpload.tearDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_forms.TestImageUpload.test_upload_image_for_own_note">
+<code class="sig-name descname">test_upload_image_for_own_note</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_forms.TestImageUpload.test_upload_image_for_own_note" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="lmn-tests-test-models-module">
-<h2>lmn.tests.test_models module<a class="headerlink" href="#lmn-tests-test-models-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-lmn.tests.test_models">
+<span id="lmn-tests-test-models-module"></span><h2>lmn.tests.test_models module<a class="headerlink" href="#module-lmn.tests.test_models" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lmn.tests.test_models.TestUser">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_models.</code><code class="sig-name descname">TestUser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_models.TestUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py method">
+<dt id="lmn.tests.test_models.TestUser.test_create_user_duplicate_email_fails">
+<code class="sig-name descname">test_create_user_duplicate_email_fails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_models.TestUser.test_create_user_duplicate_email_fails" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_models.TestUser.test_create_user_duplicate_username_fails">
+<code class="sig-name descname">test_create_user_duplicate_username_fails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_models.TestUser.test_create_user_duplicate_username_fails" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="lmn-tests-test-views-module">
-<h2>lmn.tests.test_views module<a class="headerlink" href="#lmn-tests-test-views-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-lmn.tests.test_views">
+<span id="lmn-tests-test-views-module"></span><h2>lmn.tests.test_views module<a class="headerlink" href="#module-lmn.tests.test_views" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lmn.tests.test_views.TestAddNoteUnauthenticatedUser">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_views.</code><code class="sig-name descname">TestAddNoteUnauthenticatedUser</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestAddNoteUnauthenticatedUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.tests.test_views.TestAddNoteUnauthenticatedUser.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['testing_artists', 'testing_venues', 'testing_shows']</em><a class="headerlink" href="#lmn.tests.test_views.TestAddNoteUnauthenticatedUser.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestAddNoteUnauthenticatedUser.test_add_note_unauthenticated_user_redirects_to_login">
+<code class="sig-name descname">test_add_note_unauthenticated_user_redirects_to_login</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestAddNoteUnauthenticatedUser.test_add_note_unauthenticated_user_redirects_to_login" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_views.TestAddNotesWhenUserLoggedIn">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_views.</code><code class="sig-name descname">TestAddNotesWhenUserLoggedIn</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestAddNotesWhenUserLoggedIn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.tests.test_views.TestAddNotesWhenUserLoggedIn.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['testing_users', 'testing_artists', 'testing_shows', 'testing_venues', 'testing_notes']</em><a class="headerlink" href="#lmn.tests.test_views.TestAddNotesWhenUserLoggedIn.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestAddNotesWhenUserLoggedIn.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestAddNotesWhenUserLoggedIn.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestAddNotesWhenUserLoggedIn.test_add_note_database_updated_correctly">
+<code class="sig-name descname">test_add_note_database_updated_correctly</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestAddNotesWhenUserLoggedIn.test_add_note_database_updated_correctly" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestAddNotesWhenUserLoggedIn.test_can_save_new_note_for_show_blank_data_is_error">
+<code class="sig-name descname">test_can_save_new_note_for_show_blank_data_is_error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestAddNotesWhenUserLoggedIn.test_can_save_new_note_for_show_blank_data_is_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestAddNotesWhenUserLoggedIn.test_redirect_to_note_detail_after_save">
+<code class="sig-name descname">test_redirect_to_note_detail_after_save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestAddNotesWhenUserLoggedIn.test_redirect_to_note_detail_after_save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestAddNotesWhenUserLoggedIn.test_save_note_for_non_existent_show_is_error">
+<code class="sig-name descname">test_save_note_for_non_existent_show_is_error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestAddNotesWhenUserLoggedIn.test_save_note_for_non_existent_show_is_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_views.TestArtistViews">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_views.</code><code class="sig-name descname">TestArtistViews</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestArtistViews" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.tests.test_views.TestArtistViews.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['testing_artists', 'testing_venues', 'testing_shows']</em><a class="headerlink" href="#lmn.tests.test_views.TestArtistViews.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestArtistViews.test_all_artists_displays_all_alphabetically">
+<code class="sig-name descname">test_all_artists_displays_all_alphabetically</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestArtistViews.test_all_artists_displays_all_alphabetically" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestArtistViews.test_artist_detail">
+<code class="sig-name descname">test_artist_detail</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestArtistViews.test_artist_detail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Artist 1 details displayed in correct template</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestArtistViews.test_artist_search_no_search_results">
+<code class="sig-name descname">test_artist_search_no_search_results</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestArtistViews.test_artist_search_no_search_results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestArtistViews.test_artist_search_one_search_result">
+<code class="sig-name descname">test_artist_search_one_search_result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestArtistViews.test_artist_search_one_search_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestArtistViews.test_artist_search_partial_match_search_results">
+<code class="sig-name descname">test_artist_search_partial_match_search_results</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestArtistViews.test_artist_search_partial_match_search_results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestArtistViews.test_artists_search_clear_link">
+<code class="sig-name descname">test_artists_search_clear_link</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestArtistViews.test_artists_search_clear_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestArtistViews.test_correct_template_used_for_artists">
+<code class="sig-name descname">test_correct_template_used_for_artists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestArtistViews.test_correct_template_used_for_artists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestArtistViews.test_get_artist_that_does_not_exist_returns_404">
+<code class="sig-name descname">test_get_artist_that_does_not_exist_returns_404</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestArtistViews.test_get_artist_that_does_not_exist_returns_404" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestArtistViews.test_venues_played_at_most_recent_shows_first">
+<code class="sig-name descname">test_venues_played_at_most_recent_shows_first</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestArtistViews.test_venues_played_at_most_recent_shows_first" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each artist, display a list of venues they have played shows at</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_views.TestEmptyViews">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_views.</code><code class="sig-name descname">TestEmptyViews</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestEmptyViews" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<p>main views - the ones in the navigation menu</p>
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestEmptyViews.test_with_no_artists_returns_empty_list">
+<code class="sig-name descname">test_with_no_artists_returns_empty_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestEmptyViews.test_with_no_artists_returns_empty_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestEmptyViews.test_with_no_notes_returns_empty_list">
+<code class="sig-name descname">test_with_no_notes_returns_empty_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestEmptyViews.test_with_no_notes_returns_empty_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestEmptyViews.test_with_no_venues_returns_empty_list">
+<code class="sig-name descname">test_with_no_venues_returns_empty_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestEmptyViews.test_with_no_venues_returns_empty_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_views.TestMyUserProfile">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_views.</code><code class="sig-name descname">TestMyUserProfile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestMyUserProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.tests.test_views.TestMyUserProfile.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['testing_users', 'testing_users_profile']</em><a class="headerlink" href="#lmn.tests.test_views.TestMyUserProfile.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestMyUserProfile.test_user_bio_is_displayed_on_public_profile_page">
+<code class="sig-name descname">test_user_bio_is_displayed_on_public_profile_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestMyUserProfile.test_user_bio_is_displayed_on_public_profile_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestMyUserProfile.test_user_bio_is_not_on_other_users_profile_page">
+<code class="sig-name descname">test_user_bio_is_not_on_other_users_profile_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestMyUserProfile.test_user_bio_is_not_on_other_users_profile_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestMyUserProfile.test_user_form_containts_correct_action_url">
+<code class="sig-name descname">test_user_form_containts_correct_action_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestMyUserProfile.test_user_form_containts_correct_action_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestMyUserProfile.test_user_has_edit_form_with_populated_data">
+<code class="sig-name descname">test_user_has_edit_form_with_populated_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestMyUserProfile.test_user_has_edit_form_with_populated_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestMyUserProfile.test_user_logged_in">
+<code class="sig-name descname">test_user_logged_in</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestMyUserProfile.test_user_logged_in" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestMyUserProfile.test_user_not_logged_in_should_get_sent_to_login_page">
+<code class="sig-name descname">test_user_not_logged_in_should_get_sent_to_login_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestMyUserProfile.test_user_not_logged_in_should_get_sent_to_login_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_views.TestNotes">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_views.</code><code class="sig-name descname">TestNotes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestNotes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.tests.test_views.TestNotes.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['testing_users', 'testing_artists', 'testing_venues', 'testing_shows', 'testing_notes']</em><a class="headerlink" href="#lmn.tests.test_views.TestNotes.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestNotes.test_correct_templates_uses_for_notes">
+<code class="sig-name descname">test_correct_templates_uses_for_notes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestNotes.test_correct_templates_uses_for_notes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestNotes.test_latest_notes">
+<code class="sig-name descname">test_latest_notes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestNotes.test_latest_notes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestNotes.test_notes_for_show_view">
+<code class="sig-name descname">test_notes_for_show_view</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestNotes.test_notes_for_show_view" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestNotes.test_notes_for_user_view">
+<code class="sig-name descname">test_notes_for_user_view</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestNotes.test_notes_for_user_view" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestNotes.test_notes_for_user_view_two">
+<code class="sig-name descname">test_notes_for_user_view_two</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestNotes.test_notes_for_user_view_two" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_views.TestPagination">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_views.</code><code class="sig-name descname">TestPagination</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestPagination" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.tests.test_views.TestPagination.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['testing_users', 'testing_artists_multi_page', 'testing_venues_multi_page', 'testing_shows', 'testing_notes_multi_page']</em><a class="headerlink" href="#lmn.tests.test_views.TestPagination.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestPagination.test_artists_multi_page">
+<code class="sig-name descname">test_artists_multi_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestPagination.test_artists_multi_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestPagination.test_notes_multi_page">
+<code class="sig-name descname">test_notes_multi_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestPagination.test_notes_multi_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestPagination.test_venues_multi_page">
+<code class="sig-name descname">test_venues_multi_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestPagination.test_venues_multi_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_views.TestUserAuthentication">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_views.</code><code class="sig-name descname">TestUserAuthentication</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestUserAuthentication" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<p>Some aspects of registration (e.g. missing data, duplicate username) covered in test_forms</p>
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestUserAuthentication.test_user_registration_logs_user_in">
+<code class="sig-name descname">test_user_registration_logs_user_in</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestUserAuthentication.test_user_registration_logs_user_in" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestUserAuthentication.test_user_registration_redirects_to_correct_page">
+<code class="sig-name descname">test_user_registration_redirects_to_correct_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestUserAuthentication.test_user_registration_redirects_to_correct_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_views.TestUserProfile">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_views.</code><code class="sig-name descname">TestUserProfile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestUserProfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.tests.test_views.TestUserProfile.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['testing_users', 'testing_artists', 'testing_venues', 'testing_shows', 'testing_notes']</em><a class="headerlink" href="#lmn.tests.test_views.TestUserProfile.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestUserProfile.test_correct_user_name_shown_different_profiles">
+<code class="sig-name descname">test_correct_user_name_shown_different_profiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestUserProfile.test_correct_user_name_shown_different_profiles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestUserProfile.test_logout">
+<code class="sig-name descname">test_logout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestUserProfile.test_logout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestUserProfile.test_user_profile_show_list_of_their_notes">
+<code class="sig-name descname">test_user_profile_show_list_of_their_notes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestUserProfile.test_user_profile_show_list_of_their_notes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestUserProfile.test_user_with_no_notes">
+<code class="sig-name descname">test_user_with_no_notes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestUserProfile.test_user_with_no_notes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestUserProfile.test_username_shown_on_profile_page">
+<code class="sig-name descname">test_username_shown_on_profile_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestUserProfile.test_username_shown_on_profile_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.tests.test_views.TestVenues">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.tests.test_views.</code><code class="sig-name descname">TestVenues</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestVenues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.tests.test_views.TestVenues.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['testing_venues', 'testing_artists', 'testing_shows']</em><a class="headerlink" href="#lmn.tests.test_views.TestVenues.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestVenues.test_artists_played_at_venue_most_recent_first">
+<code class="sig-name descname">test_artists_played_at_venue_most_recent_first</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestVenues.test_artists_played_at_venue_most_recent_first" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestVenues.test_correct_template_used_for_venues">
+<code class="sig-name descname">test_correct_template_used_for_venues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestVenues.test_correct_template_used_for_venues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestVenues.test_get_venue_that_does_not_exist_returns_404">
+<code class="sig-name descname">test_get_venue_that_does_not_exist_returns_404</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestVenues.test_get_venue_that_does_not_exist_returns_404" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestVenues.test_venue_detail">
+<code class="sig-name descname">test_venue_detail</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestVenues.test_venue_detail" title="Permalink to this definition">¶</a></dt>
+<dd><p>venue 1 details displayed in correct template</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestVenues.test_venue_search_clear_link">
+<code class="sig-name descname">test_venue_search_clear_link</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestVenues.test_venue_search_clear_link" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestVenues.test_venue_search_no_search_results">
+<code class="sig-name descname">test_venue_search_no_search_results</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestVenues.test_venue_search_no_search_results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestVenues.test_venue_search_one_search_result">
+<code class="sig-name descname">test_venue_search_one_search_result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestVenues.test_venue_search_one_search_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestVenues.test_venue_search_partial_match_search_results">
+<code class="sig-name descname">test_venue_search_partial_match_search_results</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestVenues.test_venue_search_partial_match_search_results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.tests.test_views.TestVenues.test_with_venues_displays_all_alphabetically">
+<code class="sig-name descname">test_with_venues_displays_all_alphabetically</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.tests.test_views.TestVenues.test_with_venues_displays_all_alphabetically" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="module-lmn.tests">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-lmn.tests" title="Permalink to this headline">¶</a></h2>
