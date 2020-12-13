@@ -1,6 +1,6 @@
 body {
 
-  background-image: url("background_animation.gif"), url("bottomleft.gif");
+  background-image: url("background_animation.gif"), url("bottom.gif");
   background-repeat: repeat-x;
   background-position: top, left bottom, right bottom;
   background-size: 500, 200px, 200px;
