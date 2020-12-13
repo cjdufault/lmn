@@ -1,16 +1,14 @@
 from django.test import TestCase, Client
-
 from django.urls import reverse
 from django.contrib import auth
 from django.contrib.auth import authenticate
-
 from lmn.models import Venue, Artist, Note, Show
 from django.contrib.auth.models import User
-
 import re, datetime
 from datetime import timezone
 
-# TODO verify correct templates are rendered.class TestDeleteNotes(TestCase):
+# TODO verify correct templates are rendered.
+class TestDeleteNotes(TestCase):
 
     fixtures = ['testing_artists', 'testing_venues', 'testing_shows', 'testing_users', 'testing_notes']
 
@@ -19,7 +17,7 @@ from datetime import timezone
         self.client.force_login(user)    
 
     def test_user_delete_own_note(self):
-        request_url = reverse('delete_note', {'note_pk': 1})
+        request_url = reverse('delete_note', kwargs={'note_pk': 1})
         response = self.client.post(request_url)  # deleting should always use post requests 
         # expect note with pk=1 to be deleted - try to find it in the database
         notes = list(Note.objects.filter(pk=1))
@@ -30,56 +28,55 @@ from datetime import timezone
     def test_user_delete_other_note_not_allowed(self):
         request_url = reverse('delete_note', {'note_pk': 2})
         response = self.client.post(request_url)
-        self.assertEqual(403, response.status_code)
+        self.assertEqual(404, response.status_code)
         notes = Note.objects.get(pk=2)
-        self.assertIsNotNone([], notes]) 
+        self.assertIsNotNone([], notes) 
         # try and delete note with pk=2 
 
     def test_delete_note_that_doesnt_exist(self):
-        request_url = reverse('delete_note', {'note_pk': 1000000})
+        request_url = reverse('delete_note', kwargs={'note_pk': 1000000})
         response = self.client.post(request_url)
-        self.assertEqual(403, response.status_code)
+        self.assertEqual(404, response.status_code)
         # delete note with pk=1000000
     
-    def test_modify_notes(self):
-    
-        response = self.client.post(reverse('note_details', kwargs={'note_pk':1}), {'notes':'alright'}, follow=True)
-        updated_note_1 = Note.objects.get(pk=1)
-        # db updated?
-        self.assertEqual('awesome', updated_note_1.notes)
-        self.assertEqual(response.context['note'], updated_note_1)
+    def test_modify_note(self):
+        #get state before modifying
+        original_note = Note.objects.get(pk=1)
+        # modify
+        response = self.client.post(reverse('modify_note', kwargs={'note_pk':1}), {'title': 'title is a required field', 'text':'alright'}, follow=True)
         # Check correct template was used
-        self.assertTemplateUsed(response, 'lmn/notes_detail.html')
+        self.assertTemplateUsed(response, 'lmn/notes/note_detail.html')
+        #check if db updated
+        updated_note = Note.objects.get(pk=1)
         # and correct data shown on page?
-        self.assertNotContains(response, 'cool')  # old text is gone 
-        self.assertContains(response, 'alright')  # new text shown
+        self.assertEqual(original_note.text, updated_note.text)
+        self.assertContains(response, 'alright') #updated note
        
     def test_add_notes(self):
-        response = self.client.post(reverse('note_details', kwargs={'note_pk':4}), {'notes':'boo'}, follow=True)
+        response = self.client.post(reverse('note_detail', kwargs={'note_pk':4}), {'notes':'boo'}, follow=True)
         updated_note_4 = Note.objects.get(pk=4)
         # db updated?
         self.assertEqual('boo', updated_note_4.notes)
         # Correct object used in response?
         self.assertEqual(response.context['note'], updated_note_4)
         # Check correct template was used
-        self.assertTemplateUsed(response, 'lmn/notes_detail.html')
-        # and correct data shown on page?
-        self.assertContains(response, 'boo')  # new text shown
-        def test_add_date_visited(self):
-    
-        date_listed = '2014-01-01'
-        response = self.client.post(reverse('note_details', kwargs={'note_pk':4}), {'date_listed': date_listed}, follow=True)
-        updated_note_4 = Note.objects.get(pk=4)
-        # Database updated correctly?
-        self.assertEqual(updated_note_4.date_listed.isoformat(), date_listed)   # .isoformat is YYYY-MM-DD
-        # Right object sent to template?
-        self.assertEqual(response.context['note'], updated_note_4)
-        # Check correct template was used
         self.assertTemplateUsed(response, 'lmn/note_detail.html')
         # and correct data shown on page?
-        self.assertContains(response, date_listed)  # new text shown
-       
-
+        self.assertContains(response, 'boo')  # new text shown
+    
+    def test_modify_date_visited(self):
+        posted_date = '2014-01-01'
+        response = self.client.post(reverse('modify_note', kwargs={'note_pk':1}), {'title': 'new title', 'text': 'text is also a required field', 'posted_date': posted_date}, follow=True)
+        updated_note = Note.objects.get(pk=1)
+        #database updated correctly?
+        self.assertEqual(updated_note.posted_date.isformat(), posted_date) #.isformat YYYY-MM-DD
+        #right object sent to teplate?
+        self.assertEqual(response.context['note'], updated_note)
+        #check correct template was used
+        self.assertTemplateUsed(response, 'lmn/notes/note_detail.html')
+        #correct data shown on page?
+        #data formant https://docs.djanoproject.com/en/3.1/ref/settings/#datetime-format
+        self.assertContains(response, 'Jan.1,2014') #new text shown
 
 
 class TestEmptyViews(TestCase):

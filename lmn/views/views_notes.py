@@ -44,23 +44,8 @@ def notes_for_show(request, show_pk):
 # note_detail route checks to make sure the user who owns this not is editing it
 def note_detail(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
-    # at the start of view function needs to have the note.user be equal to request.user
-    if note.user != request.user:
-        return HttpResponseForbidden()
-    if request.method == 'POST':
-        form = NewNoteForm(request.POST, request.FILES, instance=note) # instance = model object to update with the form data
-        if form.is_valid():
-            form.save()
-            messages.info(request, 'User notes updated!')
-        else:
-            messages.error(request, form.errors) # Temp error message - future version should improve
-        return redirect('note_details', note_pk=note_pk)
-    else: #GET note details
-        if latest_notes:
-            review_form = NewNoteForm(instance=note)
-            return render(request, 'lmn/notes/note_detail.html', {'note': note, 'review_form': review_form})
-        else:
-            return render(request, 'lmn/notes/note_detail.html', { 'note': note })
+    return render(request, 'lmn/notes/note_detail.html', { 'note': note })
+
 @login_required
 def modify_note(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
@@ -71,13 +56,13 @@ def modify_note(request, note_pk):
         form = NewNoteForm(request.POST, request.FILES, instance=note)
         if form.is_valid():
             note = form.save(commit=False)
-            note.user = request.user
+            note.user = request.User
             note.show = show
             note.save()
             return redirect('note_detail', note_pk=note.pk)
-    else:
-        form = NewNoteForm(instance=note)
-    return render(request, 'lmn/notes/modify_note.html', { 'form': form, 'note': note, 'show': show})
+        else:
+            form = NewNoteForm(instance=note)
+        return redirect('note_detail', note_pk=note.pk)
 
 @login_required #check that the user requesting to delete the note is the owner of the selected note
 def delete_note(request, note_pk):

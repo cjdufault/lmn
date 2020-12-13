@@ -1,14 +1,11 @@
 body {
 
-  background-image: url("background_animation.gif"), url("bottomleft.gif"), url("middle.gif"), url("bottomright.gif");
-  background-repeat: repeat-x, no-repeat, no-repeat, no-repeat;
-  background-position: center, left bottom, bottom, right bottom;
-  background-size: 500, 200px, 200px, 200px;
+  background-image: url("background_animation.gif"), url("bottomleft.gif");
+  background-repeat: repeat-x;
+  background-position: top, left bottom, right bottom;
+  background-size: 500, 200px, 200px;
   position: relative;
-  height: 500px, 100px, 100px, 100px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0
+  background-attachment: fixed;
 }
 a {
   color: rgb(70, 193, 197);
@@ -75,6 +72,7 @@ img {
   padding: 40px 10px;
   opacity: 0.5;
   filter: alpha(opacity=10);
+  height: 20pxpx;
 }
 img.hover {
   opacity: 1.0;
