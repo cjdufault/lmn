@@ -4,7 +4,6 @@ from django.http import HttpResponse, HttpResponseServerError
 import os
 import logging
 from urllib import parse
-from django.core.exceptions import ObjectDoesNotExist
 from django.db import IntegrityError
 
 key = os.environ.get('TICKETMASTER_KEY')
@@ -12,16 +11,23 @@ baseUrl = 'https://app.ticketmaster.com/discovery/v2/'
 
 unavailable_message = 'There was a problem. Try again later.'
 
+
 def get_events():
-    designted_market_area = '336' # https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#supported-dma
+    """ This function calls the ticketmaster api and returns event data for area 336
+    :return: The Ticketmaster API response as a `JSON`
+    """
+    # 336 is Minneapolis/ St Paul
+    designted_market_area = '336'
+    # https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#supported-dma
     query = {'classificationName': 'music', 'dmaId': designted_market_area}
-    # Help of parsing url from https://www.youtube.com/watch?v=LosIGgon_KM
     url = '{}events.json?{}&apikey={}'.format(baseUrl, parse.urlencode(query), key)
     response = requests.get(url.strip())
     response.raise_for_status()
     return response.json()
 
+
 def get_artist(request):
+    """ This function is called by the /artist endpoint and populates the db with artist information"""
     try:
         data = get_events()
         events = data['_embedded']['events']
@@ -43,7 +49,7 @@ def get_artist(request):
 
 
 def get_venue(request):
-
+    """ This function is called by the /venue endpoint and populates the db with venue information"""
     try:
         query = {'classificationName': 'music', 'stateCode': 'MN'}
         url = '{}venues.json?{}&apikey={}'.format(baseUrl, parse.urlencode(query), key)
@@ -68,9 +74,8 @@ def get_venue(request):
         return HttpResponseServerError(unavailable_message)
 
 
-
 def get_show(request):
-
+    """ This function is called by the /show endpoint and populates the db with show information"""
     try:
         data = get_events()
         events = data['_embedded']['events']
@@ -91,5 +96,3 @@ def get_show(request):
     except Exception as e:
         logging.error(f'Error: {e}')
         return HttpResponseServerError(unavailable_message)
-
-
