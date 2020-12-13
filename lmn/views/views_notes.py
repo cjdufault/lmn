@@ -55,7 +55,7 @@ def notes_for_show(request, show_pk):
 def note_detail(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
     return render(request, 'lmn/notes/note_detail.html', { 'note': note })
-    @login_required
+@login_required
 def modify_note(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
     show = get_object_or_404(Show, pk=note.show_id)
