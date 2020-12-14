@@ -153,6 +153,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 if os.getenv('GAE_INSTANCE'):
     GS_STATIC_FILE_BUCKET = 'lmnop-295416.appspot.com'
     STATIC_URL = f'https://storage.cloud.google.com/{GS_STATIC_FILE_BUCKET}/static/'
+    
+    DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+    GS_BUCKET_NAME = 'show_images'
+    MEDIA_URL = f'https://storage.cloud.google.com/{GS_BUCKET_NAME}/media/user_images'
+    
+    from google.oauth2 import service_account
+    GS_CREDENTIALS = service_account.Credentials.from_service_account_file('lmnop_creds.json')
 else:
     STATIC_URL = '/static/'
 
