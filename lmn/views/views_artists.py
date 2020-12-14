@@ -26,6 +26,7 @@ def venues_for_artist(request, artist_pk):   # pk = artist_pk
 
 
 def artist_list(request):
+    """ :return: lists of artists"""
     form = ArtistSearchForm()
     search_name = request.GET.get('search_name')
     
@@ -38,9 +39,11 @@ def artist_list(request):
     page_number = request.GET.get('page')
     page_object = paginator.get_page(page_number)
 
-    return render(request, 'lmn/artists/artist_list.html', { 'artists': page_object, 'form': form, 'search_term': search_name })
+    return render(request, 'lmn/artists/artist_list.html', {'artists': page_object, 'form': form,
+                                                            'search_term': search_name})
 
 
 def artist_detail(request, artist_pk):
+    """:return: artist details"""
     artist = get_object_or_404(Artist, pk=artist_pk)
-    return render(request, 'lmn/artists/artist_detail.html' , { 'artist': artist })
+    return render(request, 'lmn/artists/artist_detail.html', {'artist': artist})

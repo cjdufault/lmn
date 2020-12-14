@@ -41,7 +41,7 @@ def latest_notes(request):
 
 
 def notes_for_show(request, show_pk): 
-    # Notes for show, most recent first
+    """Notes for show, most recent first"""
     notes = Note.objects.filter(show=show_pk).order_by('-posted_date')
     show = Show.objects.get(pk=show_pk)  
     
@@ -49,16 +49,18 @@ def notes_for_show(request, show_pk):
     page_number = request.GET.get('page')
     page_object = paginator.get_page(page_number)
     
-    return render(request, 'lmn/notes/note_list.html', { 'show': show, 'notes': page_object })
+    return render(request, 'lmn/notes/note_list.html', {'show': show, 'notes': page_object})
 
 
 def note_detail(request, note_pk):
+    """Specific details of a note"""
     note = get_object_or_404(Note, pk=note_pk)
-    return render(request, 'lmn/notes/note_detail.html', { 'note': note })
+    return render(request, 'lmn/notes/note_detail.html', {'note': note})
 
 
 @login_required
 def user_notes(request):
+    """User can see their own notes"""
     form = NoteSearchForm()
     search_name = request.GET.get('search_name')
     if search_name:

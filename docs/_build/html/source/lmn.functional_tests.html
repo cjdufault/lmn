@@ -38,8 +38,190 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="lmn-functional-tests-functional-tests-module">
-<h2>lmn.functional_tests.functional_tests module<a class="headerlink" href="#lmn-functional-tests-functional-tests-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-lmn.functional_tests.functional_tests">
+<span id="lmn-functional-tests-functional-tests-module"></span><h2>lmn.functional_tests.functional_tests module<a class="headerlink" href="#module-lmn.functional_tests.functional_tests" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="lmn.functional_tests.functional_tests.BrowseArtists">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.functional_tests.functional_tests.</code><code class="sig-name descname">BrowseArtists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.BrowseArtists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.LiveServerTestCase</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.functional_tests.functional_tests.BrowseArtists.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['fn_testing_users', 'fn_testing_artists', 'fn_testing_venues', 'fn_testing_shows', 'fn_testing_notes']</em><a class="headerlink" href="#lmn.functional_tests.functional_tests.BrowseArtists.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.BrowseArtists.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.BrowseArtists.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.BrowseArtists.tearDown">
+<code class="sig-name descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.BrowseArtists.tearDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.BrowseArtists.test_browsing_artists">
+<code class="sig-name descname">test_browsing_artists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.BrowseArtists.test_browsing_artists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.BrowseArtists.test_searching_artists">
+<code class="sig-name descname">test_searching_artists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.BrowseArtists.test_searching_artists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.functional_tests.functional_tests.BrowseVenues">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.functional_tests.functional_tests.</code><code class="sig-name descname">BrowseVenues</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.BrowseVenues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.LiveServerTestCase</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.functional_tests.functional_tests.BrowseVenues.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['fn_testing_users', 'fn_testing_artists', 'fn_testing_venues', 'fn_testing_shows', 'fn_testing_notes']</em><a class="headerlink" href="#lmn.functional_tests.functional_tests.BrowseVenues.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.BrowseVenues.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.BrowseVenues.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.BrowseVenues.tearDown">
+<code class="sig-name descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.BrowseVenues.tearDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.BrowseVenues.test_browsing_venues">
+<code class="sig-name descname">test_browsing_venues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.BrowseVenues.test_browsing_venues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.BrowseVenues.test_searching_venues">
+<code class="sig-name descname">test_searching_venues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.BrowseVenues.test_searching_venues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.functional_tests.functional_tests.HomePageTest">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.functional_tests.functional_tests.</code><code class="sig-name descname">HomePageTest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.HomePageTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.LiveServerTestCase</span></code></p>
+<p>hello selenium</p>
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.HomePageTest.test_home_page">
+<code class="sig-name descname">test_home_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.HomePageTest.test_home_page" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.functional_tests.functional_tests.TestNotes">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.functional_tests.functional_tests.</code><code class="sig-name descname">TestNotes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestNotes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.LiveServerTestCase</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.functional_tests.functional_tests.TestNotes.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['fn_testing_users', 'fn_testing_artists', 'fn_testing_venues', 'fn_testing_shows', 'fn_testing_notes']</em><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestNotes.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.TestNotes.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestNotes.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.TestNotes.tearDown">
+<code class="sig-name descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestNotes.tearDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.TestNotes.test_add_note_for_show_when_logged_in">
+<code class="sig-name descname">test_add_note_for_show_when_logged_in</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestNotes.test_add_note_for_show_when_logged_in" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.TestNotes.test_add_note_redirect_to_login_and_back_to_add_note">
+<code class="sig-name descname">test_add_note_redirect_to_login_and_back_to_add_note</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestNotes.test_add_note_redirect_to_login_and_back_to_add_note" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.TestNotes.test_add_note_redirect_to_login_and_register_and_back_to_add_note">
+<code class="sig-name descname">test_add_note_redirect_to_login_and_register_and_back_to_add_note</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestNotes.test_add_note_redirect_to_login_and_register_and_back_to_add_note" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.functional_tests.functional_tests.TestProfilePage">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.functional_tests.functional_tests.</code><code class="sig-name descname">TestProfilePage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestProfilePage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.LiveServerTestCase</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.functional_tests.functional_tests.TestProfilePage.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['fn_testing_users', 'fn_testing_artists', 'fn_testing_venues', 'fn_testing_shows', 'fn_testing_notes']</em><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestProfilePage.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.TestProfilePage.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestProfilePage.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.TestProfilePage.tearDown">
+<code class="sig-name descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestProfilePage.tearDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.TestProfilePage.test_view_user_profile_own_notes_shown">
+<code class="sig-name descname">test_view_user_profile_own_notes_shown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestProfilePage.test_view_user_profile_own_notes_shown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="lmn.functional_tests.functional_tests.TestRegistration">
+<em class="property">class </em><code class="sig-prename descclassname">lmn.functional_tests.functional_tests.</code><code class="sig-name descname">TestRegistration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestRegistration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.LiveServerTestCase</span></code></p>
+<dl class="py attribute">
+<dt id="lmn.functional_tests.functional_tests.TestRegistration.fixtures">
+<code class="sig-name descname">fixtures</code><em class="property"> = ['fn_testing_users']</em><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestRegistration.fixtures" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.TestRegistration.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestRegistration.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.TestRegistration.tearDown">
+<code class="sig-name descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestRegistration.tearDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.TestRegistration.test_login_invalid_password">
+<code class="sig-name descname">test_login_invalid_password</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestRegistration.test_login_invalid_password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.TestRegistration.test_login_valid_password">
+<code class="sig-name descname">test_login_valid_password</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestRegistration.test_login_valid_password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="lmn.functional_tests.functional_tests.TestRegistration.test_register">
+<code class="sig-name descname">test_register</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lmn.functional_tests.functional_tests.TestRegistration.test_register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="module-lmn.functional_tests">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-lmn.functional_tests" title="Permalink to this headline">¶</a></h2>

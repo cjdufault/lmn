@@ -13,26 +13,28 @@ from django.core.files.storage import default_storage
 # default, so add this to prevent more than one user with the same email.
 User._meta.get_field('email')._unique = True
 
-#Require email, first name and last name
+# Require email, first name and last name
 User._meta.get_field('email')._blank = False
 User._meta.get_field('last_name')._blank = False
 User._meta.get_field('first_name')._blank = False
 
+
 class Profile(models.Model):
+    """Model for a profile"""
     bio = models.TextField(max_length=500, blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
 
-""" A music artist """
 class Artist(models.Model):
+    """ A music artist """
     name = models.CharField(max_length=200, blank=False, unique=True)
 
     def __str__(self):
         return f'Name: {self.name}'
 
 
-""" A venue, that hosts shows. """
 class Venue(models.Model):
+    """ A venue, that hosts shows. """
     name = models.CharField(max_length=200, blank=False, unique=True)
     city = models.CharField(max_length=200, blank=False)
     state = models.CharField(max_length=2, blank=False) 
@@ -41,8 +43,8 @@ class Venue(models.Model):
         return f'Name: {self.name} Location: {self.city}, {self.state}'
 
 
-""" A show - one artist playing at one venue at a particular date. """
 class Show(models.Model):
+    """ A show - one artist playing at one venue at a particular date. """
     show_date = models.DateTimeField(blank=False)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
@@ -51,9 +53,8 @@ class Show(models.Model):
         return f'Artist: {self.artist} At: {self.venue} On: {self.show_date}'
 
 
-""" One user's opinion of one show. """
 class Note(models.Model):
-
+    """ One user's opinion of one show. """
     STAR_RATING = (
         (1, '★'),
         (2, '★★'),
@@ -70,9 +71,8 @@ class Note(models.Model):
     posted_date = models.DateField(blank=True, null=True)
     photo = models.ImageField(upload_to='user_images/', blank=True, null=True)
 
-
-    #this will override djangos built in save function
     def save(self, *args, **kwargs):
+        """this will override djangos built in save function"""
         old_note = Note.objects.filter(pk=self.pk).first()
         if old_note and old_note.photo:
             if old_note.photo != self.photo:
@@ -80,8 +80,11 @@ class Note(models.Model):
         
         super().save(*args, **kwargs)
 
-    #if a whole note is deleted, this is used so the photo associated with the note is not taking up space in our file system
     def delete(self, *args, **kwargs):
+        """
+        if a whole note is deleted, this is used so the photo associated with the note is not taking up space in our
+        file system
+        """
         if self.photo:
             self.delete_photo(self.photo)
 
@@ -90,8 +93,8 @@ class Note(models.Model):
     def delete_photo(self, photo):
         if default_storage.exists(photo.name):
             default_storage.delete(photo.name)
-    
 
     def __str__(self):
         photo_str = self.photo.url if self.photo else 'no photo'
-        return f'Note for user {self.user} for show ID {self.show} with title {self.title} text {self.text} posted on {self.posted_date} \nPhoto {photo_str}'
+        return f'Note for user {self.user} for show ID {self.show} with title {self.title} text {self.text} posted ' \
+               f'on {self.posted_date} \nPhoto {photo_str}'

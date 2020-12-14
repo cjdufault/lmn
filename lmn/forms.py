@@ -7,20 +7,26 @@ from django.forms import ValidationError
 
 
 class VenueSearchForm(forms.Form):
+    """Form for searching the lmn_venues table"""
     search_name = forms.CharField(label='Venue Name', max_length=200)
 
 
 class ArtistSearchForm(forms.Form):
+    """Form for searching the lmn_artists table"""
     search_name = forms.CharField(label='Artist Name', max_length=200)
 
 
 class NoteSearchForm(forms.Form):
+    """Form for searching the lmn_notes table"""
     search_name = forms.CharField(label='Note', max_length=200)
+
 
 class DateInput(forms.DateInput):
     input_type = 'date'
 
+
 class NewNoteForm(forms.ModelForm):
+    """Form for creating a new show note"""
     class Meta:
         model = Note
         fields = ('title', 'text', 'rating', 'posted_date', 'photo')
@@ -29,13 +35,15 @@ class NewNoteForm(forms.ModelForm):
         }
 
 
-
 class ProfileForm(forms.ModelForm):
+    """Form for creating user profile"""
     class Meta:
         model = Profile
         fields = ('bio',)
 
+
 class UserRegistrationForm(UserCreationForm):
+    """Django Form for creating a new user"""
 
     class Meta:
         model = User

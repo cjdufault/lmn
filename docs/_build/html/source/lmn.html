@@ -41,7 +41,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="lmn.functional_tests.html">lmn.functional_tests package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="lmn.functional_tests.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lmn.functional_tests.html#lmn-functional-tests-functional-tests-module">lmn.functional_tests.functional_tests module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lmn.functional_tests.html#module-lmn.functional_tests.functional_tests">lmn.functional_tests.functional_tests module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lmn.functional_tests.html#module-lmn.functional_tests">Module contents</a></li>
 </ul>
 </li>
@@ -129,6 +129,7 @@
 <dt id="lmn.forms.ArtistSearchForm">
 <em class="property">class </em><code class="sig-prename descclassname">lmn.forms.</code><code class="sig-name descname">ArtistSearchForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">field_order=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.ArtistSearchForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.forms.Form</span></code></p>
+<p>Form for searching the lmn_artists table</p>
 <dl class="py attribute">
 <dt id="lmn.forms.ArtistSearchForm.base_fields">
 <code class="sig-name descname">base_fields</code><em class="property"> = {'search_name': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#lmn.forms.ArtistSearchForm.base_fields" title="Permalink to this definition">¶</a></dt>
@@ -167,6 +168,7 @@
 <dt id="lmn.forms.NewNoteForm">
 <em class="property">class </em><code class="sig-prename descclassname">lmn.forms.</code><code class="sig-name descname">NewNoteForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">instance=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.NewNoteForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.models.ModelForm</span></code></p>
+<p>Form for creating a new show note</p>
 <dl class="py class">
 <dt id="lmn.forms.NewNoteForm.Meta">
 <em class="property">class </em><code class="sig-name descname">Meta</code><a class="headerlink" href="#lmn.forms.NewNoteForm.Meta" title="Permalink to this definition">¶</a></dt>
@@ -211,6 +213,7 @@
 <dt id="lmn.forms.NoteSearchForm">
 <em class="property">class </em><code class="sig-prename descclassname">lmn.forms.</code><code class="sig-name descname">NoteSearchForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">field_order=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.NoteSearchForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.forms.Form</span></code></p>
+<p>Form for searching the lmn_notes table</p>
 <dl class="py attribute">
 <dt id="lmn.forms.NoteSearchForm.base_fields">
 <code class="sig-name descname">base_fields</code><em class="property"> = {'search_name': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#lmn.forms.NoteSearchForm.base_fields" title="Permalink to this definition">¶</a></dt>
@@ -233,6 +236,7 @@
 <dt id="lmn.forms.ProfileForm">
 <em class="property">class </em><code class="sig-prename descclassname">lmn.forms.</code><code class="sig-name descname">ProfileForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">instance=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.ProfileForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.models.ModelForm</span></code></p>
+<p>Form for creating user profile</p>
 <dl class="py class">
 <dt id="lmn.forms.ProfileForm.Meta">
 <em class="property">class </em><code class="sig-name descname">Meta</code><a class="headerlink" href="#lmn.forms.ProfileForm.Meta" title="Permalink to this definition">¶</a></dt>
@@ -272,6 +276,7 @@
 <dt id="lmn.forms.UserRegistrationForm">
 <em class="property">class </em><code class="sig-prename descclassname">lmn.forms.</code><code class="sig-name descname">UserRegistrationForm</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.UserRegistrationForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.forms.UserCreationForm</span></code></p>
+<p>Django Form for creating a new user</p>
 <dl class="py class">
 <dt id="lmn.forms.UserRegistrationForm.Meta">
 <em class="property">class </em><code class="sig-name descname">Meta</code><a class="headerlink" href="#lmn.forms.UserRegistrationForm.Meta" title="Permalink to this definition">¶</a></dt>
@@ -339,6 +344,7 @@ is saved manually at a later time. Return the model instance.</p>
 <dt id="lmn.forms.VenueSearchForm">
 <em class="property">class </em><code class="sig-prename descclassname">lmn.forms.</code><code class="sig-name descname">VenueSearchForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">field_order=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.forms.VenueSearchForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.forms.forms.Form</span></code></p>
+<p>Form for searching the lmn_venues table</p>
 <dl class="py attribute">
 <dt id="lmn.forms.VenueSearchForm.base_fields">
 <code class="sig-name descname">base_fields</code><em class="property"> = {'search_name': &lt;django.forms.fields.CharField object&gt;}</em><a class="headerlink" href="#lmn.forms.VenueSearchForm.base_fields" title="Permalink to this definition">¶</a></dt>
@@ -362,8 +368,9 @@ is saved manually at a later time. Return the model instance.</p>
 <span id="lmn-models-module"></span><h2>lmn.models module<a class="headerlink" href="#module-lmn.models" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="lmn.models.Artist">
-<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Artist</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Artist" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Artist</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Artist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>A music artist</p>
 <dl class="py exception">
 <dt id="lmn.models.Artist.DoesNotExist">
 <em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#lmn.models.Artist.DoesNotExist" title="Permalink to this definition">¶</a></dt>
@@ -414,8 +421,9 @@ class built by <code class="docutils literal notranslate"><span class="pre">crea
 
 <dl class="py class">
 <dt id="lmn.models.Note">
-<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Note</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">show</span></em>, <em class="sig-param"><span class="n">user</span></em>, <em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">rating</span></em>, <em class="sig-param"><span class="n">posted_date</span></em>, <em class="sig-param"><span class="n">photo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Note" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Note</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Note" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>One user’s opinion of one show.</p>
 <dl class="py exception">
 <dt id="lmn.models.Note.DoesNotExist">
 <em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#lmn.models.Note.DoesNotExist" title="Permalink to this definition">¶</a></dt>
@@ -436,7 +444,9 @@ class built by <code class="docutils literal notranslate"><span class="pre">crea
 <dl class="py method">
 <dt id="lmn.models.Note.delete">
 <code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Note.delete" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>if a whole note is deleted, this is used so the photo associated with the note is not taking up space in our
+file system</p>
+</dd></dl>
 
 <dl class="py method">
 <dt id="lmn.models.Note.delete_photo">
@@ -484,11 +494,7 @@ object the first time, the query is executed.</p>
 <dl class="py method">
 <dt id="lmn.models.Note.save">
 <code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Note.save" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save the current instance. Override this in a subclass if you want to
-control the saving process.</p>
-<p>The ‘force_insert’ and ‘force_update’ parameters can be used to insist
-that the “save” must be an SQL insert or update (or equivalent for
-non-SQL backends), respectively. Normally, they should not be set.</p>
+<dd><p>this will override djangos built in save function</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -545,8 +551,9 @@ one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
 
 <dl class="py class">
 <dt id="lmn.models.Profile">
-<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Profile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">bio</span></em>, <em class="sig-param"><span class="n">user</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Profile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Profile</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Profile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>Model for a profile</p>
 <dl class="py exception">
 <dt id="lmn.models.Profile.DoesNotExist">
 <em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#lmn.models.Profile.DoesNotExist" title="Permalink to this definition">¶</a></dt>
@@ -599,8 +606,9 @@ object the first time, the query is executed.</p>
 
 <dl class="py class">
 <dt id="lmn.models.Show">
-<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Show</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">show_date</span></em>, <em class="sig-param"><span class="n">artist</span></em>, <em class="sig-param"><span class="n">venue</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Show" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Show</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Show" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>A show - one artist playing at one venue at a particular date.</p>
 <dl class="py exception">
 <dt id="lmn.models.Show.DoesNotExist">
 <em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#lmn.models.Show.DoesNotExist" title="Permalink to this definition">¶</a></dt>
@@ -697,8 +705,9 @@ one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
 
 <dl class="py class">
 <dt id="lmn.models.Venue">
-<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Venue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">city</span></em>, <em class="sig-param"><span class="n">state</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Venue" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">lmn.models.</code><code class="sig-name descname">Venue</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lmn.models.Venue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>A venue, that hosts shows.</p>
 <dl class="py exception">
 <dt id="lmn.models.Venue.DoesNotExist">
 <em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#lmn.models.Venue.DoesNotExist" title="Permalink to this definition">¶</a></dt>
