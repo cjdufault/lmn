@@ -16,3 +16,4 @@ env
 .DS_Store
 app.yaml
 .gcloudignore
+lmnop_creds.json
